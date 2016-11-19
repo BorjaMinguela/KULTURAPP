@@ -1,0 +1,88 @@
+html, body {
+    height : 100%;
+}
+#home-page {
+    height : 100%;
+}
+#home-page .ui-header {
+    height : 10px;
+}
+#home-page .ui-content {
+    position : absolute;
+    top      : 10px;
+    right    : 0;
+    bottom   : 20px;
+    left     : 0;
+}
+​
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -125px;
+    width: 250px;
+    height: 100px;
+}
+
+#logo-2 {
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -125px;
+    width: 250px;
+    height: 100px;
+}
+
+
+.flags {
+	position: relative;
+	top: 30%;
+}
