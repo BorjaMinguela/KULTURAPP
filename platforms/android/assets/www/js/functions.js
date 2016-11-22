@@ -33,11 +33,28 @@ function logInFunction() {
 	
 }
 
+function welcome() {
+	
+	window.location.href = "#page-welcome";
+	
+	var delay=3000;
+		
+    setTimeout(function() {
+    	window.location.href = "#page-home";
+    }, delay);
+	
+}
+
 function page_creation() {
 	
 	var homepageDiv;
 	homepageDiv=home_page.create();
 	$("body").append(homepageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	
+	
+	var welcomepageDiv;
+	welcomepageDiv=welcome_page.create();
+	$("body").append(welcomepageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	
 	var juego1pageDiv;
 	juego1pageDiv=juego1_page.create();
@@ -55,7 +72,9 @@ function page_creation() {
 	juego4pageDiv=juego4_page.create();
 	$("body").append(juego4pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	
-	window.location.href = "#page-home";
+	//window.location.href = "#page-home";
+	
+	welcome();
 	
 }
 

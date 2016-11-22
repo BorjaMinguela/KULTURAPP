@@ -57,15 +57,36 @@ var login_page = {
 			
 			var contentDiv=
 				'<div data-role="content" style="position:absolute;width:100%">'+
-					'<h3>Pagina de Login</h3>'+
+					'<img class="fitpadding fit center"src="img/logo_kulturapp.gif"/>'+
 				'</div>';
 			
-			var footerDiv=
-				'<div data-role="footer" data-position="fixed" style="text-align:center">'+
+			var footerDiv='<div data-role="footer" data-position="fixed">'+
+				'User Name: <input type="text" id="username" name="userName" value=""><p>'+
 					'<a href="" id="button-login" class="ui-btn ui-icon-refresh ui-btn-icon-left ui-corner-all" onclick=logInFunction()>LOGIN</a>'+
 				'</div>';
 			
 			pageDiv.append(headerDiv,contentDiv,footerDiv);
+
+			return pageDiv;
+		},
+
+	};
+
+///////////
+//Welcome-page
+///////////
+var welcome_page = {
+		create: function() {
+			var pageDiv=$('<div data-role="page" id="page-welcome" data-theme="a">');
+			var headerDiv=
+				'<div data-role="header" data-position="fixed" >'+
+					'<h1 style="text-align:center">KULTURAPP</h1>'+
+				'</div>';
+			
+			var contentDiv=
+				'<img class="fitpadding fit center"src="img/welcome_kulturapp.gif"/>';
+			
+			pageDiv.append(headerDiv,contentDiv);
 
 			return pageDiv;
 		},

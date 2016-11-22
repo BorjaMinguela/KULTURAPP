@@ -9,7 +9,7 @@
     <name>KULTURAPP</name>
     <description>
 		A sample Apache Cordova application that responds to the deviceready
-		event.
+		event
 	</description>
     <author email="thym-dev@eclipse.org" href="http://www.eclipse.org/thym">
 		Eclipse.org - Thym
