@@ -86,6 +86,7 @@ function queryJuegos() {
 	contentDiv+='<option value="juego-3">Juego 3</option>';
 	contentDiv+='<option value="juego-4">Juego 4</option>';
 	contentDiv+='</select>';
+	contentDiv+='<img id="kultur_map" class="fitpadding fit center"src="img/kulturapp_cerrado.jpg"/>';
 	contentDiv+='</div>';
 	
 	return contentDiv;
@@ -98,9 +99,25 @@ function selectJuego(datos) {
 	
 	var juego_selector = document.getElementById(datos).value;
 
-	juego_selector = "#"+juego_selector;
+	var delay=3000;
 	
-	window.location.href = juego_selector;
+	var elemento = "#kultur_map";
+	
+	$(elemento).remove();
+	
+	alert('img/kulturapp_'+juego_selector+'.gif');
+	
+	//falla lo siguiente:
+	//document.getElementById(elemento).src='img/kulturapp_'+juego_selector+'.gif'; 
+	
+    setTimeout(function() {
+    	
+    	juego_selector = "#"+juego_selector;
+    	
+    	window.location.href = juego_selector;
+    	
+    }, delay);
+    
 	
 }
 

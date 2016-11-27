@@ -57,7 +57,7 @@ var login_page = {
 			
 			var contentDiv=
 				'<div data-role="content" style="position:absolute;width:100%">'+
-					'<img class="fitpadding fit center"src="img/logo_kulturapp.gif"/>'+
+					'<img class="fitpadding fit center" src="img/ongietorria.gif"/>'+
 				'</div>';
 			
 			var footerDiv='<div data-role="footer" data-position="fixed">'+
@@ -84,7 +84,7 @@ var welcome_page = {
 				'</div>';
 			
 			var contentDiv=
-				'<img class="fitpadding fit center"src="img/welcome_kulturapp.gif"/>';
+				'<img class="fitpadding fit center"src="img/explicacion.gif"/>';
 			
 			pageDiv.append(headerDiv,contentDiv);
 
@@ -105,7 +105,7 @@ var home_page = {
 				'</div>';
 			
 			var contentDiv=
-				'<div class="ui-field-contain">'+
+				'<div id="ancla-home" class="ui-field-contain">'+
 				'<label for="select-1">Select:</label>'+
 				'<select name="select-1" id="select-1-1" data-theme="a">';
 				contentDiv += queryJuegos();
