@@ -393,7 +393,7 @@ var juego2_page = {
 			var headerDiv=
 				'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
 			if(i==0){
-				headerDiv+='<a href="#kultur_map" onclick="compruebaAciertosImg();" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+				headerDiv+='<a href="#kultur_map" onclick="" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
 			headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
 					'</div>';
 			
@@ -401,7 +401,7 @@ var juego2_page = {
 				'<div data-role="content" id="page-juego-2-'+i+'" style="text-align:center;">';
 			contentDiv += queryJuego2();	
 			contentDiv +='<div id="statementDiv-Juego2-'+i+'" style="text-align:left;">'+
-					'<p>AEkitaldi '+i+'</p>'
+					'<p>Ekitaldi '+i+'</p>'
 					'</div>'+
 					'<div id="solutionDiv-Juego2-'+i+'" class="ui-grid-solo">';
 					contentDiv+=
@@ -413,12 +413,12 @@ var juego2_page = {
 							'<form id="form-Juego2-'+i+'">'+
 								'<fieldset data-role="controlgroup" data-iconpos="right">'+
 								'<legend id="exercise-Juego2-'+i+'"></legend>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'a" data-mini="true" value="0" type="radio"/>'+
-								'<label for="radio-choice-'+i+'a" id="label-radio-choice-'+i+'-0">'+juego2.preguntas[i].opcionA+'</label>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'b" data-mini="true" value="1" type="radio"/>'+
-								'<label for="radio-choice-'+i+'b" id="label-radio-choice-'+i+'-1">'+juego2.preguntas[i].opcionB+'</label>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'c" data-mini="true" value="2" type="radio"/>'+
-								'<label for="radio-choice-'+i+'c" id="label-radio-choice-'+i+'-2">'+juego2.preguntas[i].opcionC+'</label>'+
+								'<input name="radio-choice-Juego-2-'+i+'" id="radio-choice-Juego-2-'+i+'a" data-mini="true" value="0" type="radio"/>'+
+								'<label for="radio-choice-Juego-2-'+i+'a" id="label-radio-choice-Juego-2-'+i+'-0">'+juego2.preguntas[i].opcionA+'</label>'+
+								'<input name="radio-choice-Juego-2-'+i+'" id="radio-choice-Juego-2-'+i+'b" data-mini="true" value="1" type="radio"/>'+
+								'<label for="radio-choice-Juego-2-'+i+'b" id="label-radio-choice-Juego-2-'+i+'-1">'+juego2.preguntas[i].opcionB+'</label>'+
+								'<input name="radio-choice-Juego-2-'+i+'" id="radio-choice-Juego-2-'+i+'c" data-mini="true" value="2" type="radio"/>'+
+								'<label for="radio-choice-Juego-2-'+i+'c" id="label-radio-choice-Juego-2-'+i+'-2">'+juego2.preguntas[i].opcionC+'</label>'+
 								'</fieldset>'+
 								'<div style="text-align:center;">'+
 									'<a href="" id="button-Juego2-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego2('+i+')">ZUZENDU</a>'+
@@ -498,12 +498,12 @@ var juego4_page = {
 							'<form id="form-Juego4-'+i+'">'+
 								'<fieldset data-role="controlgroup" data-iconpos="right">'+
 								'<legend id="test-Juego4-'+i+'"></legend>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'a" data-mini="true" value="0" type="radio"/>'+
-								'<label for="radio-choice-'+i+'a" id="label-radio-choice-'+i+'-0">'+juego4.preguntas[i].opcionA+'</label>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'b" data-mini="true" value="1" type="radio"/>'+
-								'<label for="radio-choice-'+i+'b" id="label-radio-choice-'+i+'-1">'+juego4.preguntas[i].opcionB+'</label>'+
-								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'c" data-mini="true" value="2" type="radio"/>'+
-								'<label for="radio-choice-'+i+'c" id="label-radio-choice-'+i+'-2">'+juego4.preguntas[i].opcionC+'</label>'+
+								'<input name="radio-choice-Juego-4-'+i+'" id="radio-choice-Juego-4-'+i+'a" data-mini="true" value="0" type="radio"/>'+
+								'<label for="radio-choice-Juego-4-'+i+'a" id="label-radio-choice-Juego-4-'+i+'-0">'+juego4.preguntas[i].opcionA+'</label>'+
+								'<input name="radio-choice-Juego-4-'+i+'" id="radio-choice-Juego-4-'+i+'b" data-mini="true" value="1" type="radio"/>'+
+								'<label for="radio-choice-Juego-4-'+i+'b" id="label-radio-choice-Juego-4-'+i+'-1">'+juego4.preguntas[i].opcionB+'</label>'+
+								'<input name="radio-choice-Juego-4-'+i+'" id="radio-choice-Juego-4-'+i+'c" data-mini="true" value="2" type="radio"/>'+
+								'<label for="radio-choice-Juego-4-'+i+'c" id="label-radio-choice-Juego-4-'+i+'-2">'+juego4.preguntas[i].opcionC+'</label>'+
 								'</fieldset>'+
 								'<div style="text-align:center;">'+
 									'<a href="" id="button-Juego4-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego4('+i+')">ZUZENDU</a>'+

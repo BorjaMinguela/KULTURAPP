@@ -167,7 +167,7 @@ function checkJuego2(i) {
 	
 	resultsJuego.answered++;
 	
-	var answer=$("input[name='radio-choice-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	var answer=$("input[name='radio-choice-Juego-2-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
 	//checked ha sido seleccionado por el usuario
 	if(answer==juego2.preguntas[i].sol) {
 		alert("Zuzena");
@@ -180,7 +180,7 @@ function checkJuego2(i) {
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
 	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
 	
-	$("label[id|='label-radio-choice-"+i+"']").each(
+	$("label[id|='label-radio-choice-Juego-2-"+i+"']").each(
 		function(index) {
 			if(index!=juego2.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
 				$(this).css("color","red");
@@ -199,7 +199,7 @@ function checkJuego4(i) {
 	
 	resultsJuego.answered++;
 	
-	var answer=$("input[name='radio-choice-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	var answer=$("input[name='radio-choice-Juego-4-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
 	//checked ha sido seleccionado por el usuario
 	if(answer==juego4.preguntas[i].sol) {
 		alert("Zuzena");
@@ -212,7 +212,7 @@ function checkJuego4(i) {
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
 	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
 	
-	$("label[id|='label-radio-choice-"+i+"']").each(
+	$("label[id|='label-radio-choice-Juego-4-"+i+"']").each(
 		function(index) {
 			if(index!=juego4.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
 				$(this).css("color","red");
