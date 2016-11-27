@@ -61,16 +61,25 @@ function page_creation() {
 	$("body").append(juego1pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	
 	var juego2pageDiv;
-	juego2pageDiv=juego2_page.create();
-	$("body").append(juego2pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
-	
+	for(var i=0;i<juego2.total;i++)
+	{
+		juego2pageDiv=juego2_page.create(i);
+		$("body").append(juego2pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	}
+		$("#next-juego-2-"+(juego2.total-1)).attr("href","#juego-2-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 2 vuelva al primer ejercicio
+
 	var juego3pageDiv;
 	juego3pageDiv=juego3_page.create();
 	$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	
 	var juego4pageDiv;
-	juego4pageDiv=juego4_page.create();
-	$("body").append(juego4pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	for(var i=0;i<juego4.total;i++)
+	{
+		juego4pageDiv=juego4_page.create(i);
+		$("body").append(juego4pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	}
+	$("#next-juego-4-"+(juego4.total-1)).attr("href","#juego-4-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 4 vuelva al primer ejercicio
+	
 	
 	//window.location.href = "#page-home";
 	
@@ -112,7 +121,7 @@ function selectJuego(datos) {
 	
     setTimeout(function() {
     	
-    	juego_selector = "#"+juego_selector;
+    	juego_selector = "#"+juego_selector+"-0";// Se añade el 0 para que haga referencia a las paginas inicial del juego
     	
     	window.location.href = juego_selector;
     	
@@ -151,5 +160,69 @@ function queryJuego4() {
 	
 	return contentDiv;
 	
+}
+
+function checkJuego2(i) {
+//	alert("check 1");
+	
+	resultsJuego.answered++;
+	
+	var answer=$("input[name='radio-choice-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	//checked ha sido seleccionado por el usuario
+	if(answer==juego2.preguntas[i].sol) {
+		alert("Zuzena");
+		resultsJuego.corrects++;
+	}
+	else {
+		alert("Okerra");
+	}
+	
+	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
+	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
+	
+	$("label[id|='label-radio-choice-"+i+"']").each(
+		function(index) {
+			if(index!=juego2.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
+				$(this).css("color","red");
+			}
+			else
+				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
+		}
+	);
+
+	$("#button-Juego2-"+i+"-1").attr("onclick","");//desactiva el boton de check
+//	alert("check 7");
+}
+
+function checkJuego4(i) {
+//	alert("check 1");
+	
+	resultsJuego.answered++;
+	
+	var answer=$("input[name='radio-choice-"+i+"']:checked").val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	//checked ha sido seleccionado por el usuario
+	if(answer==juego4.preguntas[i].sol) {
+		alert("Zuzena");
+		resultsJuego.corrects++;
+	}
+	else {
+		alert("Okerra");
+	}
+	
+	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
+	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
+	
+	$("label[id|='label-radio-choice-"+i+"']").each(
+		function(index) {
+			if(index!=juego4.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
+				$(this).css("color","red");
+			}
+			else
+				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
+		}
+	);
+
+	$("#button-Juego4-"+i+"-1").attr("onclick","");//desactiva el boton de check
+//	alert("check 7");
 }
 

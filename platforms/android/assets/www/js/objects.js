@@ -29,6 +29,41 @@ var appConstants = {
 		return this.serverURL+"rest/Kulturapp/addPuntuacion";
 	}
 };
+var usuario={
+		login: "",
+		progreso: null
+		
+};
+var puntuacionJuego1={
+		correctas: 0,
+		juego: "Juego1",
+		respondidas: 0
+		
+};
+var puntuacionJuego2={
+		correctas: 0,
+		juego: "Juego2",
+		respondidas: 0
+		
+};
+var puntuacionJuego3={
+		correctas: 0,
+		juego: "Juego3",
+		respondidas: 0
+		
+};
+var puntuacionJuego4={
+		correctas: 0,
+		juego: "Juego4",
+		respondidas: 0
+		
+};
+var puntuacionGlobal={
+		correctas: 0,
+		juego: "Global",
+		respondidas: 0
+		
+};
 
 var initial_pages = {
 	login: null,
@@ -37,6 +72,209 @@ var initial_pages = {
 
 var opcionesIniciales = {
 		seleccion: ["Juego 1","Juego 2","Juego 3","Juego 4"]
+	};
+
+var juego1={//Que imagen no es de esa nación
+		total: 3,
+		preguntas: [
+		           {//Euskadi
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/n6gw0qefyziwhom/vandera%20buena.png?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/r0zz8j28jq493in/aizkolari.png?dl=0", //valor=0 estos valores habra q definirlos en la imagen o boton
+		        	   Img2:"https://dl.dropboxusercontent.com/s/0dszp1q33m8z1js/desierto%20irlanda.png?dl=0",//valor 1
+		        	   Img3:"https://dl.dropboxusercontent.com/s/0kynz66bshd10ez/euskal%20dantzak.jpg?dl=0",//valor 2
+		        	   Img4:"https://dl.dropboxusercontent.com/s/71kploo8bm28fcd/kalimotxo.jpg?dl=0",//valor3
+		        	   Img5:"https://dl.dropboxusercontent.com/s/dg6vzxpbu0t3qy1/la_estatua_de_la_libertad.jpg?dl=0",//valor 4
+		        	   Img6:"https://dl.dropboxusercontent.com/s/4fl5vlq7zkva8n5/mapa%20euskadi.png?dl=0", //valor 5
+		        	   Img7:"https://dl.dropboxusercontent.com/s/dn5kqmy4epseslm/MuseoGuggenheim1.jpg?dl=0",//valor 6
+		        	   Img8:"https://dl.dropboxusercontent.com/s/e4710oi9usbwtjl/talo%20.jpg?dl=0",//valor 7
+		        	   sol1:"1",//Sobran dos imagenes o eso o la estatua de la libertad o el mapa de irlanda tienen algo que ver con euskadi
+		        	   sol2:"4",
+		           },
+		           {//catalunya
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/cv4nuwkjdu52q2a/bandera%20catalana.png?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/hdmzpsqinhzub7f/butifarra.jpg?dl=0",//valor 0
+		        	   Img2:"https://dl.dropboxusercontent.com/s/ip0mu6q74q3xawc/calcots.jpg?dl=0",//valor 1
+		        	   Img3:"https://dl.dropboxusercontent.com/s/e6k8xpbouooe99i/castellers-de-barcelona.jpg?dl=0",//valor 2
+		        	   Img4:"https://dl.dropboxusercontent.com/s/okh2oe82ccze6il/mapa%20catalunya.jpg?dl=0",//valor 3
+		        	   Img5:"https://dl.dropboxusercontent.com/s/gbogooy140sqcte/pan-tumaca.jpg?dl=0",//valor 4
+		        	   Img6:"https://dl.dropboxusercontent.com/s/x9mjz6z55fum2i3/pastas%20te.jpg?dl=0",//valor 5
+		        	   Img7:"https://dl.dropboxusercontent.com/s/c25b0wc99j629zv/sagrada%20familia.jpg?dl=0",//valor 6
+		        	   Img8:"https://dl.dropboxusercontent.com/s/ht7j0kvcojvkgem/Sevillana.jpg?dl=0",//valor 7
+		        	   sol1:"5",
+		        	   sol2:"7",
+		           },
+		           {//Irlanda
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/nw1v29u4yus90un/bandera%20irlandesa.gif?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/gju0j4b4ktfhw8a/castillo%20irlanda.jpg?dl=0",//valor=0
+		        	   Img2:"https://dl.dropboxusercontent.com/s/92ardgjc78apeho/desierto%20irlanda.jpg?dl=0",//valor=1
+		        	   Img3:"https://dl.dropboxusercontent.com/s/r7ntoc8njaar0js/desierto%20irlandaa.jpg?dl=0",//valor=2
+		        	   Img4:"https://dl.dropboxusercontent.com/s/m0cayp23wpvs86l/desierto%20irlandaaa.jpg?dl=0",//valor=3
+		        	   Img5:"https://dl.dropboxusercontent.com/s/0he9frrj214osar/desierto%20irlandaaaa.jpg?dl=0",
+		        	   Img6:"https://dl.dropboxusercontent.com/s/ha030yz5ja6fshz/leprechaund.jpg?dl=0",
+		        	   Img7:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
+		        	   Img8:"https://dl.dropboxusercontent.com/",
+		        	   sol1:"6",
+		        	   sol2:"7",
+		           },
+		           ]
+};
+
+var juego2={//Que imagen no es de esa nación
+		total: 6,
+		preguntas: [
+		           {
+		        	  img: "https://dl.dropboxusercontent.com/s/vq1syrobyqy3r6x/video%201.gif?dl=0",
+		        	  opcionA:"a. Euskadi",//valor=0
+		        	   opcionB:"b. Catalunya",//valor=1
+		        	   opcionC:"c. Irlanda",//valor=2
+		        	   sol:"1",
+		           },
+		           {
+			        	  img: "https://dl.dropboxusercontent.com/s/nl0tjrjzb46iyo3/video%202.gif?dl=0",
+			        	  opcionA:"a. Euskadi",
+			        	   opcionB:"b. Catalunya",
+			        	   opcionC:"c. Irlanda",
+			        	   sol:"0",
+		           },
+		           {
+			        	  img: "https://dl.dropboxusercontent.com/s/f83jy88qj1eb5xp/video%203.gif?dl=0",
+			        	  opcionA:"a. Euskadi",
+			        	   opcionB:"b. Catalunya",
+			        	   opcionC:"c. Irlanda",
+			        	   sol:"0",
+		           },
+		           {
+			        	  img: "https://dl.dropboxusercontent.com/s/ksaq7as3yj9riqs/video%204.gif?dl=0",
+			        	  opcionA:"a. Euskadi",
+			        	   opcionB:"b. Catalunya",
+			        	   opcionC:"c. Irlanda",
+			        	   sol:"2", 
+		           },
+		           {
+			        	  img: "https://dl.dropboxusercontent.com/s/91rmkexqr5yg7kx/video%205.gif?dl=0",
+			        	  opcionA:"a. Euskadi",
+			        	   opcionB:"b. Catalunya",
+			        	   opcionC:"c. Irlanda",
+			        	   sol:"2",
+		           },
+		           {
+			        	  img: "https://dl.dropboxusercontent.com/s/za48l19bb7zmkwo/video%206.gif?dl=0",
+			        	  opcionA:"a. Euskadi",
+			        	   opcionB:"b. Catalunya",
+			        	   opcionC:"c. Irlanda",
+			        	   sol:"1",
+		           },
+			           
+		           
+		           ]
+};
+
+var juego3={//Que tienen en común las imagenes
+		total: 4,
+		preguntas: [
+		           {
+		        	  img1: "https://dl.dropboxusercontent.com/s/tvlkua3ngvmxkjy/alubias.jpg?dl=0",
+		        	  img2: "https://dl.dropboxusercontent.com/s/z7fp6oxv6idz6pc/alubiass.jpg?dl=0",
+		        	  img3: "https://dl.dropboxusercontent.com/s/dsal0buumfbfapc/alubiasss.jpg?dl=0",
+		        	   sol:"alubias",
+		           },
+		           {
+			        	  img1: "https://dl.dropboxusercontent.com/s/7gx3c8h04s582k7/falda.jpg?dl=0",
+			        	  img2: "https://dl.dropboxusercontent.com/s/l04pn78nyx14qoq/faldaa.jpg?dl=0",
+			        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
+			        	   sol:"falda",
+		           },
+		           {
+			        	  img1: "https://dl.dropboxusercontent.com/s/aefv227moje5u73/pelota.jpg?dl=0",
+			        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
+			        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
+			        	   sol:"pelota",
+		           },///falta otro ejercicio pero solo hay dos imagenes
+		           
+			           
+		           
+		           ]
+};
+		 
+var juego4={
+		total: 10,
+		preguntas: [
+		           {
+		        	   enunciado: "<p><b>1. Oinarekin eta eskuekin jolasten den kirola nongoa da?</b></p>",
+		        	   opcionA:"a. Euskadi",
+		        	   opcionB:"b. Catalunya	",
+		        	   opcionC:"c. Irlanda",
+		        	   sol:"2",
+		           },
+		           {
+		        	   enunciado: "<p><b>2. Nolakoa da irlandako bandera?</b></p>",
+		        	   opcionA:"a. Urdina eta zuria",
+		        	   opcionB:"b. Berdea, zuria eta gorria",
+		        	   opcionC:"c. Berdea, zuria eta laranja",
+		        	   sol:"2",
+		           },
+		           {
+		        	   enunciado: "<p><b>3. Zein ingrediente dago hiru lekutako plater tipikoetan?</b></p>",
+		        	   opcionA:"a. Patata",
+		        	   opcionB:"b. Indabak",
+		        	   opcionC:"c. Arrautzak",
+		        	   sol:"1",
+		           },
+		           {
+		        	   enunciado: "<p><b>4.  Non dago desertua?</b></p>",
+		        	   opcionA:"a. Catalunyan",
+		        	   opcionB:"b. Irlandan",
+		        	   opcionC:"c. Baten ere ez",
+		        	   sol:"2",///
+		           },
+		           {
+		        	   enunciado: "<p><b>5. Zein edari da ospetsua irlandan?</b></p>",
+		        	   opcionA:"a. coca cola",
+		        	   opcionB:"b. cola cao",
+		        	   opcionC:"c. garagardoa",
+		        	   sol:"2",
+		           },
+		           {
+		        	   enunciado: "<p><b>6. Zein janari ez da tipikoa Euskadin?</b></p>",
+		        	   opcionA:"a. Taloa",
+		        	   opcionB:"b. Kalimotxoa",
+		        	   opcionC:"c. Butifarra",
+		        	   sol:"2",
+		           },
+		           {
+		        	   enunciado: "<p><b>7. Ze eraikin da ospetsua Catalunyan?</b></p>",
+		        	   opcionA:"a. Gaztelu bat",
+		        	   opcionB:"b. Familia Sakratua",
+		        	   opcionC:"c. Guggeheim",
+		        	   sol:"1",
+		           },
+		           {
+		        	   enunciado: "<p><b>8. Zein koloretakoak dira igelak?</b></p>",
+		        	   opcionA:"a. Urdinak	",
+		        	   opcionB:"b. Froggie",
+		        	   opcionC:"c. Berdeak",
+		        	   sol:"2",
+		           },
+		           {
+		        	   enunciado: "<p><b>9. Zein kirol ez dagokio Euskadiri?</b></p>",
+		        	   opcionA:"a. Boloak	",
+		        	   opcionB:"b. Aizkolaritza",
+		        	   opcionC:"c. Eskupilota",
+		        	   sol:"0",
+		           },
+		           {
+		        	   enunciado: "<p><b>10. Nolakoa da irlandako maskota?</b></p>",
+		        	   opcionA:"a. Behi beltz bat",
+		        	   opcionB:"b. Ipotx neska urdina",
+		        	   opcionC:"c. Ipotx mutil berdea",
+		        	   sol:"2",
+		           },
+		          ]
+};
+
+var resultsJuego = {
+		corrects: 0,
+		answered: 0
 	};
 
 
@@ -147,24 +385,69 @@ var juego1_page = {
 ////////////
 /////Juego 2
 ////////////
+
 var juego2_page = {
-create: function() {
-	var pageDiv=$('<div data-role="page" id="juego-2"></div>');
-	var headerDiv=
-		'<div data-role="header" data-position="fixed" >'+
-			'<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
-		'</div>';
-	
-	var contentDiv='<div data-role="content">';
-	contentDiv += queryJuego2();	
-	contentDiv += '</div>';
-	
-	pageDiv.append(headerDiv,contentDiv);
-
-	return pageDiv;
-},
-
-};
+		create: function(i) {
+//			alert("create1");
+			var pageDiv=$('<div data-role="page" id="juego-2-'+i+'"></div>');
+			var headerDiv=
+				'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
+			if(i==0){
+				headerDiv+='<a href="#kultur_map" onclick="compruebaAciertosImg();" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+			headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
+					'</div>';
+			
+			var contentDiv=
+				'<div data-role="content" id="page-juego-2-'+i+'" style="text-align:center;">';
+			contentDiv += queryJuego2();	
+			contentDiv +='<div id="statementDiv-Juego2-'+i+'" style="text-align:left;">'+
+					'<p>AEkitaldi '+i+'</p>'
+					'</div>'+
+					'<div id="solutionDiv-Juego2-'+i+'" class="ui-grid-solo">';
+					contentDiv+=
+						'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
+							'<img style="width:250px;height:250px;" id="img-'+i+'-1" src="'+juego2.preguntas[i].img+'" >'+
+							'</img>'+
+						'</div>'+
+						'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
+							'<form id="form-Juego2-'+i+'">'+
+								'<fieldset data-role="controlgroup" data-iconpos="right">'+
+								'<legend id="exercise-Juego2-'+i+'"></legend>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'a" data-mini="true" value="0" type="radio"/>'+
+								'<label for="radio-choice-'+i+'a" id="label-radio-choice-'+i+'-0">'+juego2.preguntas[i].opcionA+'</label>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'b" data-mini="true" value="1" type="radio"/>'+
+								'<label for="radio-choice-'+i+'b" id="label-radio-choice-'+i+'-1">'+juego2.preguntas[i].opcionB+'</label>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'c" data-mini="true" value="2" type="radio"/>'+
+								'<label for="radio-choice-'+i+'c" id="label-radio-choice-'+i+'-2">'+juego2.preguntas[i].opcionC+'</label>'+
+								'</fieldset>'+
+								'<div style="text-align:center;">'+
+									'<a href="" id="button-Juego2-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego2('+i+')">ZUZENDU</a>'+
+								'</div>'+
+							'</form>'+
+						'</div>';									
+			
+			var footerDiv=
+			'<div data-role="footer" data-position="fixed" style="padding-top:1%;">'+
+				'<div class="ui-grid-b">';
+			if(i!=0){
+				footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-2-'+(i-1)+'" id="prev-juego-2-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
+			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-2-'+(i+1)+'" id="next-juego-2'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+				'</div>'+
+				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
+					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
+					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
+				'</div>'+	
+			'</div>';
+			//alert(headerDiv);
+			//alert(contentDiv);
+			//alert(footerDiv);
+			pageDiv.append(headerDiv,contentDiv,footerDiv);
+			
+//			alert("create2");
+			return pageDiv;
+		}
+	};
 
 ////////////
 /////Juego 3
@@ -191,21 +474,62 @@ create: function() {
 ////////////
 /////Juego 4
 ////////////
+
 var juego4_page = {
-create: function() {
-	var pageDiv=$('<div data-role="page" id="juego-4"></div>');
-	var headerDiv=
-		'<div data-role="header" data-position="fixed" >'+
-			'<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
-		'</div>';
-	
-	var contentDiv='<div data-role="content">';
-	contentDiv += queryJuego4();	
-	contentDiv += '</div>';
-	
-	pageDiv.append(headerDiv,contentDiv);
-
-	return pageDiv;
-},
-
-};
+		create: function(i) {
+//			alert("create1");
+			var pageDiv=$('<div data-role="page" id="juego-4-'+i+'"></div>');
+			var headerDiv=
+				'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
+			if(i==0){
+				headerDiv+='<a href="#kultur_map" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+			headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
+					'</div>';
+			
+			var contentDiv=
+				'<div data-role="content" id="page-juego-4-'+i+'" style="text-align:center;">';
+				contentDiv += queryJuego2();	
+			contentDiv +='<div id="statementDiv-Juego4-'+i+'" style="text-align:left;">'+
+					'<p>Galdera '+(i+1)+'</p>'+juego4.preguntas[i].enunciado+// Sacamos el enunciado de la pregunta
+					'</div>'+
+					'<div id="solutionDiv-Juego4-'+i+'" class="ui-grid-solo">';
+					contentDiv+=
+						'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
+							'<form id="form-Juego4-'+i+'">'+
+								'<fieldset data-role="controlgroup" data-iconpos="right">'+
+								'<legend id="test-Juego4-'+i+'"></legend>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'a" data-mini="true" value="0" type="radio"/>'+
+								'<label for="radio-choice-'+i+'a" id="label-radio-choice-'+i+'-0">'+juego4.preguntas[i].opcionA+'</label>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'b" data-mini="true" value="1" type="radio"/>'+
+								'<label for="radio-choice-'+i+'b" id="label-radio-choice-'+i+'-1">'+juego4.preguntas[i].opcionB+'</label>'+
+								'<input name="radio-choice-'+i+'" id="radio-choice-'+i+'c" data-mini="true" value="2" type="radio"/>'+
+								'<label for="radio-choice-'+i+'c" id="label-radio-choice-'+i+'-2">'+juego4.preguntas[i].opcionC+'</label>'+
+								'</fieldset>'+
+								'<div style="text-align:center;">'+
+									'<a href="" id="button-Juego4-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego4('+i+')">ZUZENDU</a>'+
+								'</div>'+
+							'</form>'+
+						'</div>';									
+			
+			var footerDiv=
+			'<div data-role="footer" data-position="fixed" style="padding-top:1%;">'+
+				'<div class="ui-grid-b">';
+			if(i!=0){
+				footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-4-'+(i-1)+'" id="prev-juego-4-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
+			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-4-'+(i+1)+'" id="next-juego-4-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+				'</div>'+
+				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
+					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
+					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
+				'</div>'+	
+			'</div>';
+			//alert(headerDiv);
+			//alert(contentDiv);
+			//alert(footerDiv);
+			pageDiv.append(headerDiv,contentDiv,footerDiv);
+			
+//			alert("create2");
+			return pageDiv;
+		}
+	};
