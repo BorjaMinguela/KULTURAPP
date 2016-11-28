@@ -37,7 +37,7 @@ function welcome() {
 	
 	window.location.href = "#page-welcome";
 	
-	var delay=3000;
+	var delay=5000;//BM: 5 segundos para que coincida con la duración del gif
 		
     setTimeout(function() {
     	window.location.href = "#page-home";
@@ -112,9 +112,13 @@ function selectJuego(datos) {
 	
 	var elemento = "#kultur_map";
 	
-	$(elemento).remove();
+	//$(elemento).remove();
+	$(elemento).attr('src','img/kulturapp_'+juego_selector+'.gif');
+	setTimeout(function() {
+		$(elemento).attr('src','img/enunciado_'+juego_selector+'.gif');   	
+    }, delay);
 	
-	alert('img/kulturapp_'+juego_selector+'.gif');
+	//alert('img/kulturapp_'+juego_selector+'.gif');
 	
 	//falla lo siguiente:
 	//document.getElementById(elemento).src='img/kulturapp_'+juego_selector+'.gif'; 
@@ -125,7 +129,7 @@ function selectJuego(datos) {
     	
     	window.location.href = juego_selector;
     	
-    }, delay);
+    }, delay*2);
     
 	
 }

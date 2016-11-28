@@ -296,14 +296,18 @@ var login_page = {
 			var contentDiv=
 				'<div data-role="content" style="position:absolute;width:100%">'+
 					'<img class="fitpadding fit center" src="img/ongietorria.gif"/>'+
-				'</div>';
-			
-			var footerDiv='<div data-role="footer" data-position="fixed">'+
-				'User Name: <input type="text" id="username" name="userName" value=""><p>'+
+					'User Name: <input type="text" id="username" name="userName" value=""><p>'+
 					'<a href="" id="button-login" class="ui-btn ui-icon-refresh ui-btn-icon-left ui-corner-all" onclick=logInFunction()>LOGIN</a>'+
 				'</div>';
 			
-			pageDiv.append(headerDiv,contentDiv,footerDiv);
+			//BM: Quito el footer porque apenas se veia la imagen
+//			var footerDiv='<div data-role="footer" data-position="fixed">'+
+//				'User Name: <input type="text" id="username" name="userName" value=""><p>'+
+//					'<a href="" id="button-login" class="ui-btn ui-icon-refresh ui-btn-icon-left ui-corner-all" onclick=logInFunction()>LOGIN</a>'+
+//				'</div>';
+			
+			//pageDiv.append(headerDiv,contentDiv,footerDiv);
+			pageDiv.append(headerDiv,contentDiv);
 
 			return pageDiv;
 		},
@@ -401,7 +405,7 @@ var juego2_page = {
 				'<div data-role="content" id="page-juego-2-'+i+'" style="text-align:center;">';
 			contentDiv += queryJuego2();	
 			contentDiv +='<div id="statementDiv-Juego2-'+i+'" style="text-align:left;">'+
-					'<p>Ekitaldi '+i+'</p>'
+					'<p>Ekitaldi '+(i+1)+'</p>'
 					'</div>'+
 					'<div id="solutionDiv-Juego2-'+i+'" class="ui-grid-solo">';
 					contentDiv+=
