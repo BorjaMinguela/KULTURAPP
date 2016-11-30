@@ -31,7 +31,7 @@ var appConstants = {
 };
 var usuario={
 		login: "",
-		progreso: null
+		progreso: 0
 		
 };
 var puntuacionJuego1={
@@ -294,7 +294,8 @@ var login_page = {
 				'</div>';
 			
 			var contentDiv=
-				'<div data-role="content" style="position:absolute;width:100%">'+
+				//'<div data-role="content" style="position:absolute;width:100%">'+
+				'<div data-role="content">'+
 					'<img class="fitpadding fit center" src="img/ongietorria.gif"/>'+
 					'User Name: <input type="text" id="username" name="userName" value=""><p>'+
 					'<a href="" id="button-login" class="ui-btn ui-icon-refresh ui-btn-icon-left ui-corner-all" onclick=logInFunction()>LOGIN</a>'+
@@ -397,7 +398,8 @@ var juego2_page = {
 			var headerDiv=
 				'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
 			if(i==0){
-				headerDiv+='<a href="#kultur_map" onclick="" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+				//headerDiv+='<a href="#kultur_map" onclick="" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+				headerDiv+='<a href="" onclick="returnHome()" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
 			headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
 					'</div>';
 			
@@ -486,7 +488,8 @@ var juego4_page = {
 			var headerDiv=
 				'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
 			if(i==0){
-				headerDiv+='<a href="#kultur_map" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+				//headerDiv+='<a href="#kultur_map" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+				headerDiv+='<a href="" onclick="returnHome()" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
 			headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
 					'</div>';
 			

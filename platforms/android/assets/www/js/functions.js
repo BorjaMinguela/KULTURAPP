@@ -101,6 +101,26 @@ function queryJuegos() {
 	return contentDiv;
 	
 }
+function returnHome(){//funcion para volver al menu principal
+	var elemento = "#kultur_map";
+	var tablero="";
+	switch(usuario.progreso) {
+    case 0:
+        tablero='img/kulturapp_cerrado.jpg';
+        break;
+    case 1:
+        tablero='img/kulturapp_juego-2.jpg';
+        break;
+    case 2:
+        tablero='img/kulturapp_juego-3.jpg';
+        break;
+    case 3:
+        tablero='img/kulturapp_juego-4.jpg';
+        break;
+}
+	$(elemento).attr('src',tablero);
+	window.location.href = "#page-home";	
+}
 
 function selectJuego(datos) {
 	
