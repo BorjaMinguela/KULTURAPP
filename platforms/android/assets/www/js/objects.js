@@ -349,7 +349,7 @@ var home_page = {
 			
 			var contentDiv=
 				'<div id="ancla-home" class="ui-field-contain">'+
-				'<label for="select-1">Select:</label>'+
+				'<label for="select-1">Selecciona juego:</label>'+
 				'<select name="select-1" id="select-1-1" data-theme="a">';
 				contentDiv += queryJuegos();
 				
@@ -369,18 +369,50 @@ var home_page = {
 /////Juego 1
 ////////////
 var juego1_page = {
-	create: function() {
-		var pageDiv=$('<div data-role="page" id="juego-1"></div>');
+	create: function(i) {
+		var pageDiv=$('<div data-role="page" id="juego-1-'+i+'"></div>');
 		var headerDiv=
-			'<div data-role="header" data-position="fixed" >'+
-				'<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
+			'<div data-role="header" style="padding-bottom:1%" data-position="fixed" data-fullscreen="false">';
+		if(i==0){
+			headerDiv+='<a href="" onclick="returnHome()" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';
+		}
+		headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
 			'</div>';
 		
-		var contentDiv='<div data-role="content">';
+		var contentDiv='<div data-role="content" id="page-juego-1-'+i+'" style="text-align:center;">';
 		contentDiv += queryJuego1();	
-		contentDiv += '</div>';
-		
-		pageDiv.append(headerDiv,contentDiv);
+		contentDiv +='<div id="statementDiv-Juego1-'+i+'" style="text-align:left;">'+
+		'<p>Ekitaldi '+(i+1)+'</p>'
+		'</div>';
+		contentDiv += '</div>'+
+		'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
+			'<img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Bandera+'">'+
+			'<form id="form-Juego2-'+i+'">'+
+				'<input type="checkbox" name="img" value="1"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img1+'"><br>'+
+				'<input type="checkbox" name="img" value="2"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img2+'"><br>'+
+				'<input type="checkbox" name="img" value="3"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img3+'"><br>'+
+				'<input type="checkbox" name="img" value="4"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img4+'"><br>'+
+				'<input type="checkbox" name="img" value="5"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img5+'"><br>'+
+				'<input type="checkbox" name="img" value="6"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img6+'"><br>'+
+				'<input type="checkbox" name="img" value="7"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img7+'"><br>'+
+				'<input type="checkbox" name="img" value="8"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img8+'"><br>'+
+				'<input type="submit" value="Submit">'+
+			'</form>'+
+		'</div>';
+		var footerDiv=
+			'<div data-role="footer" data-position="fixed" style="padding-top:1%;">'+
+				'<div class="ui-grid-b">';
+			if(i!=0){
+				footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-1-'+(i-1)+'" id="prev-juego-1-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
+			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-1-'+(i+1)+'" id="next-juego-1'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+				'</div>'+
+				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
+					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-b res-1" id="juego1-res-'+i+'-1"></div>'+
+					'<div class="ui-block-c res-2" id="juego1-res-'+i+'-2"></div>'+
+				'</div>'+	
+			'</div>';
+		pageDiv.append(headerDiv,contentDiv,footerDiv);
 	
 		return pageDiv;
 	},
