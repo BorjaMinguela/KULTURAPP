@@ -179,7 +179,7 @@ var juego2={//Que imagen no es de esa nación
 };
 
 var juego3={//Que tienen en común las imagenes
-		total: 4,
+		total: 3,
 		preguntas: [
 		           {
 		        	  img1: "https://dl.dropboxusercontent.com/s/tvlkua3ngvmxkjy/alubias.jpg?dl=0",
@@ -188,16 +188,16 @@ var juego3={//Que tienen en común las imagenes
 		        	   sol:"alubias",
 		           },
 		           {
-			        	  img1: "https://dl.dropboxusercontent.com/s/7gx3c8h04s582k7/falda.jpg?dl=0",
-			        	  img2: "https://dl.dropboxusercontent.com/s/l04pn78nyx14qoq/faldaa.jpg?dl=0",
-			        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
-			        	   sol:"falda",
+		        	  img1: "https://dl.dropboxusercontent.com/s/7gx3c8h04s582k7/falda.jpg?dl=0",
+		        	  img2: "https://dl.dropboxusercontent.com/s/l04pn78nyx14qoq/faldaa.jpg?dl=0",
+		        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
+		        	   sol:"falda",
 		           },
 		           {
-			        	  img1: "https://dl.dropboxusercontent.com/s/aefv227moje5u73/pelota.jpg?dl=0",
-			        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
-			        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
-			        	   sol:"pelota",
+		        	  img1: "https://dl.dropboxusercontent.com/s/aefv227moje5u73/pelota.jpg?dl=0",
+		        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
+		        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
+		        	   sol:"pelota",
 		           },///falta otro ejercicio pero solo hay dos imagenes
 		           
 			           
@@ -478,7 +478,7 @@ var juego2_page = {
 				'<div class="ui-grid-b">';
 			if(i!=0){
 				footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-2-'+(i-1)+'" id="prev-juego-2-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
-			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-2-'+(i+1)+'" id="next-juego-2'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-2-'+(i+1)+'" id="next-juego-2-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 				'</div>'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
 					'<div class="ui-block-a">RESULTS: </div>'+
@@ -500,18 +500,47 @@ var juego2_page = {
 /////Juego 3
 ////////////
 var juego3_page = {
-create: function() {
-	var pageDiv=$('<div data-role="page" id="juego-3"></div>');
+create: function(i) {
+	var pageDiv=$('<div data-role="page" id="juego-3-'+i+'"></div>');
 	var headerDiv=
-		'<div data-role="header" data-position="fixed" >'+
-			'<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
+		'<div data-role="header" data-position="fixed" >';
+		if(i==0){
+			//headerDiv+='<a href="#kultur_map" onclick="" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+			headerDiv+='<a href="" onclick="returnHome()" id="prev-sel" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left" data-transition="turn">Aurreko</a>';}
+		headerDiv+='<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">KULTURAPP</h1>'+
 		'</div>';
 	
-	var contentDiv='<div data-role="content">';
+	var contentDiv='<div data-role="content" id="juego-3-'+i+'" style="text-align:center;">';
 	contentDiv += queryJuego3();	
-	contentDiv += '</div>';
+	contentDiv +='<div id="statementDiv-Juego3-'+i+'" style="text-align:left;">'+
+	'<p>Antzekotasunak '+(i+1)+'</p>'
+	'</div>';
+	contentDiv += '</div>'+
+	'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
+			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img1+'"><br>'+
+			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img2+'"><br>'+
+			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img3+'"><br>'+
+			'<label for="text-juego-3-'+i+'">Erantzuna:</label>'+
+			'<input name="erantzuna" id="eran-juego-3-'+i+'" data-clear-btn="true" value="" type="text" placeholder="Erantzuna" />'+
+			'<div style="text-align:center;">'+
+			'<a href="" id="button-Juego3-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego3('+i+')">ZUZENDU</a>'+
+		'</div>'+
+	'</div>';
+	var footerDiv=
+		'<div data-role="footer" data-position="fixed" style="padding-top:1%;">'+
+			'<div class="ui-grid-b">';
+		if(i!=0){
+			footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-3-'+(i-1)+'" id="prev-juego-3-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
+		footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-3-'+(i+1)+'" id="next-juego-3-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+			'</div>'+
+			'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
+				'<div class="ui-block-a">RESULTS: </div>'+
+				'<div class="ui-block-b res-1" id="juego3-res-'+i+'-1"></div>'+
+				'<div class="ui-block-c res-2" id="juego3-res-'+i+'-2"></div>'+
+			'</div>'+	
+		'</div>';
 	
-	pageDiv.append(headerDiv,contentDiv);
+	pageDiv.append(headerDiv,contentDiv,footerDiv);
 
 	return pageDiv;
 },

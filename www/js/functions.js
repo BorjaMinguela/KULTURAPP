@@ -72,9 +72,12 @@ function page_creation() {
 		$("#next-juego-2-"+(juego2.total-1)).attr("href","#juego-2-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 2 vuelva al primer ejercicio
 
 	var juego3pageDiv;
-	juego3pageDiv=juego3_page.create();
-	$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
-	
+	for(var i=0;i<juego3.total;i++)
+	{
+		juego3pageDiv=juego3_page.create(i);
+		$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	}
+	$("#next-juego-3-"+(juego3.total-1)).attr("href","#juego-3-0");
 	var juego4pageDiv;
 	for(var i=0;i<juego4.total;i++)
 	{
@@ -212,6 +215,29 @@ function checkJuego2(i) {
 	);
 
 	$("#button-Juego2-"+i+"-1").attr("onclick","");//desactiva el boton de check
+//	alert("check 7");
+}
+function checkJuego3(i) {
+//	alert("check 1");
+	
+	resultsJuego.answered++;
+	
+	var answer=$("#eran-juego-3-"+i).val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	//checked ha sido seleccionado por el usuario
+	if(answer==juego3.preguntas[i].sol) {
+		alert("Zuzena");
+		resultsJuego.corrects++;
+		$("#eran-juego-3-"+i).css("color","green");
+	}
+	else {
+		alert("Okerra");
+		$("#eran-juego-3-"+i).css("color","red");
+	}
+	
+	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
+	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
+
+	$("#button-Juego3-"+i+"-1").attr("onclick","");//desactiva el boton de check
 //	alert("check 7");
 }
 
