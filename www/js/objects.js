@@ -77,44 +77,53 @@ var opcionesIniciales = {
 var juego1={//Que imagen no es de esa nación
 		total: 3,
 		preguntas: [
-		           {//Euskadi
+		           {//Euskadi 1
 		        	   Bandera: "https://dl.dropboxusercontent.com/s/n6gw0qefyziwhom/vandera%20buena.png?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/r0zz8j28jq493in/aizkolari.png?dl=0", //valor=0 estos valores habra q definirlos en la imagen o boton
 		        	   Img2:"https://dl.dropboxusercontent.com/s/0dszp1q33m8z1js/desierto%20irlanda.png?dl=0",//valor 1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/0kynz66bshd10ez/euskal%20dantzak.jpg?dl=0",//valor 2
 		        	   Img4:"https://dl.dropboxusercontent.com/s/71kploo8bm28fcd/kalimotxo.jpg?dl=0",//valor3
-		        	   Img5:"https://dl.dropboxusercontent.com/s/dg6vzxpbu0t3qy1/la_estatua_de_la_libertad.jpg?dl=0",//valor 4
-		        	   Img6:"https://dl.dropboxusercontent.com/s/4fl5vlq7zkva8n5/mapa%20euskadi.png?dl=0", //valor 5
-		        	   Img7:"https://dl.dropboxusercontent.com/s/dn5kqmy4epseslm/MuseoGuggenheim1.jpg?dl=0",//valor 6
-		        	   Img8:"https://dl.dropboxusercontent.com/s/e4710oi9usbwtjl/talo%20.jpg?dl=0",//valor 7
-		        	   sol1:"1",//Sobran dos imagenes o eso o la estatua de la libertad o el mapa de irlanda tienen algo que ver con euskadi
-		        	   sol2:"4",
+		        	   sol:"1",
 		           },
-		           {//catalunya
+		           {//Euskadi 2
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/n6gw0qefyziwhom/vandera%20buena.png?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/dg6vzxpbu0t3qy1/la_estatua_de_la_libertad.jpg?dl=0",//valor 4
+		        	   Img2:"https://dl.dropboxusercontent.com/s/4fl5vlq7zkva8n5/mapa%20euskadi.png?dl=0", //valor 5
+		        	   Img3:"https://dl.dropboxusercontent.com/s/dn5kqmy4epseslm/MuseoGuggenheim1.jpg?dl=0",//valor 6
+		        	   Img4:"https://dl.dropboxusercontent.com/s/e4710oi9usbwtjl/talo%20.jpg?dl=0",//valor 7
+		        	   sol:"0",
+		           },
+		           {//catalunya 1
 		        	   Bandera: "https://dl.dropboxusercontent.com/s/cv4nuwkjdu52q2a/bandera%20catalana.png?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/hdmzpsqinhzub7f/butifarra.jpg?dl=0",//valor 0
 		        	   Img2:"https://dl.dropboxusercontent.com/s/ip0mu6q74q3xawc/calcots.jpg?dl=0",//valor 1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/e6k8xpbouooe99i/castellers-de-barcelona.jpg?dl=0",//valor 2
-		        	   Img4:"https://dl.dropboxusercontent.com/s/okh2oe82ccze6il/mapa%20catalunya.jpg?dl=0",//valor 3
-		        	   Img5:"https://dl.dropboxusercontent.com/s/gbogooy140sqcte/pan-tumaca.jpg?dl=0",//valor 4
-		        	   Img6:"https://dl.dropboxusercontent.com/s/x9mjz6z55fum2i3/pastas%20te.jpg?dl=0",//valor 5
-		        	   Img7:"https://dl.dropboxusercontent.com/s/c25b0wc99j629zv/sagrada%20familia.jpg?dl=0",//valor 6
-		        	   Img8:"https://dl.dropboxusercontent.com/s/ht7j0kvcojvkgem/Sevillana.jpg?dl=0",//valor 7
-		        	   sol1:"5",
-		        	   sol2:"7",
+		        	   Img4:"https://dl.dropboxusercontent.com/s/x9mjz6z55fum2i3/pastas%20te.jpg?dl=0",//valor 3
+		        	   sol:"3",
+		           },
+		           {//catalunya 2
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/cv4nuwkjdu52q2a/bandera%20catalana.png?dl=0",
+		        	   Img5:"https://dl.dropboxusercontent.com/s/gbogooy140sqcte/pan-tumaca.jpg?dl=0",//valor 0
+		        	   Img6:"https://dl.dropboxusercontent.com/s/okh2oe82ccze6il/mapa%20catalunya.jpg?dl=0",//valor 1
+		        	   Img7:"https://dl.dropboxusercontent.com/s/c25b0wc99j629zv/sagrada%20familia.jpg?dl=0",//valor 2
+		        	   Img8:"https://dl.dropboxusercontent.com/s/ht7j0kvcojvkgem/Sevillana.jpg?dl=0",//valor 3
+		        	   sol:"1",
 		           },
 		           {//Irlanda
 		        	   Bandera: "https://dl.dropboxusercontent.com/s/nw1v29u4yus90un/bandera%20irlandesa.gif?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/gju0j4b4ktfhw8a/castillo%20irlanda.jpg?dl=0",//valor=0
 		        	   Img2:"https://dl.dropboxusercontent.com/s/92ardgjc78apeho/desierto%20irlanda.jpg?dl=0",//valor=1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/r7ntoc8njaar0js/desierto%20irlandaa.jpg?dl=0",//valor=2
-		        	   Img4:"https://dl.dropboxusercontent.com/s/m0cayp23wpvs86l/desierto%20irlandaaa.jpg?dl=0",//valor=3
-		        	   Img5:"https://dl.dropboxusercontent.com/s/0he9frrj214osar/desierto%20irlandaaaa.jpg?dl=0",
-		        	   Img6:"https://dl.dropboxusercontent.com/s/ha030yz5ja6fshz/leprechaund.jpg?dl=0",
-		        	   Img7:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
-		        	   Img8:"https://dl.dropboxusercontent.com/",
-		        	   sol1:"6",
-		        	   sol2:"7",
+		        	   Img4:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
+		        	   sol:"3",
+		           },
+		           {//Irlanda
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/nw1v29u4yus90un/bandera%20irlandesa.gif?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/0he9frrj214osar/desierto%20irlandaaaa.jpg?dl=0",
+		        	   Img2:"https://dl.dropboxusercontent.com/s/ha030yz5ja6fshz/leprechaund.jpg?dl=0",
+		        	   Img3:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
+		        	   Img4:"https://dl.dropboxusercontent.com/s/gju0j4b4ktfhw8a/castillo%20irlanda.jpg?dl=0",
+		        	   sol:"3",
 		           },
 		           ]
 };
