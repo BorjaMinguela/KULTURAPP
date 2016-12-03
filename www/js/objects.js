@@ -75,10 +75,10 @@ var opcionesIniciales = {
 	};
 
 var juego1={//Que imagen no es de esa nación
-		total: 3,
+		total: 6,
 		preguntas: [
 		           {//Euskadi 1
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/n6gw0qefyziwhom/vandera%20buena.png?dl=0",
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/jrjzqvb88itqvyd/video%2010.gif?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/r0zz8j28jq493in/aizkolari.png?dl=0", //valor=0 estos valores habra q definirlos en la imagen o boton
 		        	   Img2:"https://dl.dropboxusercontent.com/s/0dszp1q33m8z1js/desierto%20irlanda.png?dl=0",//valor 1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/0kynz66bshd10ez/euskal%20dantzak.jpg?dl=0",//valor 2
@@ -86,7 +86,7 @@ var juego1={//Que imagen no es de esa nación
 		        	   sol:"1",
 		           },
 		           {//Euskadi 2
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/n6gw0qefyziwhom/vandera%20buena.png?dl=0",
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/jrjzqvb88itqvyd/video%2010.gif?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/dg6vzxpbu0t3qy1/la_estatua_de_la_libertad.jpg?dl=0",//valor 4
 		        	   Img2:"https://dl.dropboxusercontent.com/s/4fl5vlq7zkva8n5/mapa%20euskadi.png?dl=0", //valor 5
 		        	   Img3:"https://dl.dropboxusercontent.com/s/dn5kqmy4epseslm/MuseoGuggenheim1.jpg?dl=0",//valor 6
@@ -94,7 +94,7 @@ var juego1={//Que imagen no es de esa nación
 		        	   sol:"0",
 		           },
 		           {//catalunya 1
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/cv4nuwkjdu52q2a/bandera%20catalana.png?dl=0",
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/gm0cbbtm049ufd1/ezgif.com-video-to-gif.gif?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/hdmzpsqinhzub7f/butifarra.jpg?dl=0",//valor 0
 		        	   Img2:"https://dl.dropboxusercontent.com/s/ip0mu6q74q3xawc/calcots.jpg?dl=0",//valor 1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/e6k8xpbouooe99i/castellers-de-barcelona.jpg?dl=0",//valor 2
@@ -102,28 +102,28 @@ var juego1={//Que imagen no es de esa nación
 		        	   sol:"3",
 		           },
 		           {//catalunya 2
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/cv4nuwkjdu52q2a/bandera%20catalana.png?dl=0",
-		        	   Img5:"https://dl.dropboxusercontent.com/s/gbogooy140sqcte/pan-tumaca.jpg?dl=0",//valor 0
-		        	   Img6:"https://dl.dropboxusercontent.com/s/okh2oe82ccze6il/mapa%20catalunya.jpg?dl=0",//valor 1
-		        	   Img7:"https://dl.dropboxusercontent.com/s/c25b0wc99j629zv/sagrada%20familia.jpg?dl=0",//valor 2
-		        	   Img8:"https://dl.dropboxusercontent.com/s/ht7j0kvcojvkgem/Sevillana.jpg?dl=0",//valor 3
-		        	   sol:"1",
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/gm0cbbtm049ufd1/ezgif.com-video-to-gif.gif?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/gbogooy140sqcte/pan-tumaca.jpg?dl=0",//valor 0
+		        	   Img2:"https://dl.dropboxusercontent.com/s/okh2oe82ccze6il/mapa%20catalunya.jpg?dl=0",//valor 1
+		        	   Img3:"https://dl.dropboxusercontent.com/s/c25b0wc99j629zv/sagrada%20familia.jpg?dl=0",//valor 2
+		        	   Img4:"https://dl.dropboxusercontent.com/s/ht7j0kvcojvkgem/Sevillana.jpg?dl=0",//valor 3
+		        	   sol:"3",
 		           },
 		           {//Irlanda
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/nw1v29u4yus90un/bandera%20irlandesa.gif?dl=0",
-		        	   Img1:"https://dl.dropboxusercontent.com/s/gju0j4b4ktfhw8a/castillo%20irlanda.jpg?dl=0",//valor=0
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/cyxj84v2btfu92v/video%2011.gif?dl=0",
+		        	   Img1:"https://dl.dropboxusercontent.com/s/7033j3czrzxzicl/desierto%20irlandaaa.jpg?dl=0",//valor=0
 		        	   Img2:"https://dl.dropboxusercontent.com/s/92ardgjc78apeho/desierto%20irlanda.jpg?dl=0",//valor=1
 		        	   Img3:"https://dl.dropboxusercontent.com/s/r7ntoc8njaar0js/desierto%20irlandaa.jpg?dl=0",//valor=2
 		        	   Img4:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
 		        	   sol:"3",
 		           },
 		           {//Irlanda
-		        	   Bandera: "https://dl.dropboxusercontent.com/s/nw1v29u4yus90un/bandera%20irlandesa.gif?dl=0",
+		        	   Bandera: "https://dl.dropboxusercontent.com/s/cyxj84v2btfu92v/video%2011.gif?dl=0",
 		        	   Img1:"https://dl.dropboxusercontent.com/s/0he9frrj214osar/desierto%20irlandaaaa.jpg?dl=0",
 		        	   Img2:"https://dl.dropboxusercontent.com/s/ha030yz5ja6fshz/leprechaund.jpg?dl=0",
-		        	   Img3:"https://dl.dropboxusercontent.com/s/9a8iq71lcbmwrlz/toro_osborne.jpg?dl=0",
+		        	   Img3:"https://dl.dropboxusercontent.com/s/4vo3arf4766tq0e/taj-mahal.jpg?dl=0",
 		        	   Img4:"https://dl.dropboxusercontent.com/s/gju0j4b4ktfhw8a/castillo%20irlanda.jpg?dl=0",
-		        	   sol:"3",
+		        	   sol:"2",
 		           },
 		           ]
 };
@@ -391,21 +391,18 @@ var juego1_page = {
 		var contentDiv='<div data-role="content" id="page-juego-1-'+i+'" style="text-align:center;">';
 		contentDiv += queryJuego1();	
 		contentDiv +='<div id="statementDiv-Juego1-'+i+'" style="text-align:left;">'+
-		'<p>Ekitaldi '+(i+1)+'</p>'
+		'<img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Bandera+'"><br><br>'+
+		'<h1>Ekitaldi '+(i+1)+'</h1>'
 		'</div>';
 		contentDiv += '</div>'+
 		'<div class="ui-block-a" style="text-align:center;vertical-align:middle;">'+
-			'<img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Bandera+'">'+
+			
 			'<form id="form-Juego2-'+i+'">'+
-				'<input type="checkbox" name="img" value="1"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img1+'"><br>'+
-				'<input type="checkbox" name="img" value="2"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img2+'"><br>'+
-				'<input type="checkbox" name="img" value="3"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img3+'"><br>'+
-				'<input type="checkbox" name="img" value="4"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img4+'"><br>'+
-				'<input type="checkbox" name="img" value="5"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img5+'"><br>'+
-				'<input type="checkbox" name="img" value="6"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img6+'"><br>'+
-				'<input type="checkbox" name="img" value="7"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img7+'"><br>'+
-				'<input type="checkbox" name="img" value="8"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img8+'"><br>'+
-				'<input type="submit" value="Submit">'+
+				'<input type="radio" name="radio-choice-Juego-1-'+i+'" value="0"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img1+'"><br>'+
+				'<input type="radio" name="radio-choice-Juego-1-'+i+'" value="1"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img2+'"><br>'+
+				'<input type="radio" name="radio-choice-Juego-1-'+i+'" value="2"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img3+'"><br>'+
+				'<input type="radio" name="radio-choice-Juego-1-'+i+'" value="3"><img style="width:300px;height:200px;" src="'+juego1.preguntas[i].Img4+'"><br>'+
+				'<a href="" id="button-Juego1-'+i+'-1" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego1('+i+')">ZUZENDU</a>'+
 			'</form>'+
 		'</div>';
 		var footerDiv=
@@ -413,7 +410,7 @@ var juego1_page = {
 				'<div class="ui-grid-b">';
 			if(i!=0){
 				footerDiv+='<div class="ui-block-a" style="text-align:left;width:20%;"><a href="#juego-1-'+(i-1)+'" id="prev-juego-1-'+i+'" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Aurreko</a></div>';}
-			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-1-'+(i+1)+'" id="next-juego-1'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
+			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-1-'+(i+1)+'" id="next-juego-1-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 				'</div>'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
 					'<div class="ui-block-a">RESULTS: </div>'+

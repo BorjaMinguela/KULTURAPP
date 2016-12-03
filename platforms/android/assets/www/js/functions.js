@@ -1,14 +1,14 @@
 /*
  * 
- * Copyright (C) 2016 Josu Barrientos Bahamonde
+ * Copyright (C) 2016 Josu Barrientos Bahamonde, Borja Minguela Foces, Mikel De Prado, Cristian Llaguno
  * 
  * 
- * BILBAPP is free software: you can redistribute it and/or modify it under
+ * KULTURAPP is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
  * 
- * BILBAPP is distributed in the hope that it will be useful, but WITHOUT
+ * KULTURAPP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
  * <http://www.gnu.org/licenses/>.
@@ -61,7 +61,9 @@ function page_creation() {
 	{
 		juego1pageDiv=juego1_page.create(i);
 		$("body").append(juego1pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+		
 	}
+		$("#next-juego-1-"+(juego1.total-1)).attr("onclick","terminarJuego1()");
 	
 	var juego2pageDiv;
 	for(var i=0;i<juego2.total;i++)
@@ -72,9 +74,12 @@ function page_creation() {
 		$("#next-juego-2-"+(juego2.total-1)).attr("href","#juego-2-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 2 vuelva al primer ejercicio
 
 	var juego3pageDiv;
-	juego3pageDiv=juego3_page.create();
-	$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
-	
+	for(var i=0;i<juego3.total;i++)
+	{
+		juego3pageDiv=juego3_page.create(i);
+		$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
+	}
+	$("#next-juego-3-"+(juego3.total-1)).attr("href","#juego-3-0");
 	var juego4pageDiv;
 	for(var i=0;i<juego4.total;i++)
 	{
@@ -93,10 +98,13 @@ function page_creation() {
 function queryJuegos() {
 	
 	var contentDiv='<div data-role="content" id="scrollable">';
-	contentDiv+='<option value="juego-1">Juego 1</option>';
-	contentDiv+='<option value="juego-2">Juego 2</option>';
-	contentDiv+='<option value="juego-3">Juego 3</option>';
-	contentDiv+='<option value="juego-4">Juego 4</option>';
+	contentDiv+='<option id="selectjuego1" value="juego-1">Juego 1</option>';
+	contentDiv+='<option id="selectjuego2" value="juego-2" hidden>Juego 2</option>';
+	contentDiv+='<option id="selectjuego3" value="juego-3" hidden>Juego 3</option>';
+	contentDiv+='<option id="selectjuego4" value="juego-4" hidden>Juego 4</option>';
+	contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
+	contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
+	contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
 	contentDiv+='</select>';
 	contentDiv+='<img id="kultur_map" class="fitpadding fit center"src="img/kulturapp_cerrado.jpg"/>';
 	contentDiv+='</div>';
@@ -183,6 +191,50 @@ function queryJuego4() {
 	
 }
 
+function checkJuego1(i){
+	resultsJuego.answered++;
+	var selected=$('input[name="radio-choice-Juego-1-'+i+'"]:checked').val();
+	if(selected==juego1.preguntas[i].sol) {
+		alert("Zuzena");
+		resultsJuego.corrects++;
+	}
+	else {
+		alert("Okerra");
+	}
+	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
+	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
+	
+	
+
+	//$("#button-Juego1-"+i+"-1").attr("onclick","");//desactiva el boton de check
+	$("#button-Juego1-"+i+"-1").hide();
+}
+
+function terminarJuego1(){
+	//alert("terminarjuego1");
+	if (resultsJuego.corrects==6){
+		//alert("correctas");
+		puntuacionJuego1.correctas=resultsJuego.corrects;
+		puntuacionJuego1.respondidas=resultsJuego.answered;
+		usuario.progreso=1;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		$("#selectjuego2").show();
+		returnHome();
+	}
+	else{
+		//alert("incorrectas");
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		for (i=0;i<juego1.total;i++){
+			$("#button-Juego1-"+i+"-1").show();
+		}
+		window.location.href = "#juego-1-0";
+	}
+}
+
 function checkJuego2(i) {
 //	alert("check 1");
 	
@@ -212,6 +264,29 @@ function checkJuego2(i) {
 	);
 
 	$("#button-Juego2-"+i+"-1").attr("onclick","");//desactiva el boton de check
+//	alert("check 7");
+}
+function checkJuego3(i) {
+//	alert("check 1");
+	
+	resultsJuego.answered++;
+	
+	var answer=$("#eran-juego-3-"+i).val();//Obtener el valor del radio seleccionado por el usuario, en el conjunto de inputs de nombre'radio-choice-1' 
+	//checked ha sido seleccionado por el usuario
+	if(answer==juego3.preguntas[i].sol) {
+		alert("Zuzena");
+		resultsJuego.corrects++;
+		$("#eran-juego-3-"+i).css("color","green");
+	}
+	else {
+		alert("Okerra");
+		$("#eran-juego-3-"+i).css("color","red");
+	}
+	
+	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
+	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
+
+	$("#button-Juego3-"+i+"-1").attr("onclick","");//desactiva el boton de check
 //	alert("check 7");
 }
 
