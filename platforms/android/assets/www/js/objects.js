@@ -179,27 +179,36 @@ var juego2={//Que imagen no es de esa nación
 };
 
 var juego3={//Que tienen en común las imagenes
-		total: 3,
+		total: 4,
 		preguntas: [
 		           {
+		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
 		        	  img1: "https://dl.dropboxusercontent.com/s/tvlkua3ngvmxkjy/alubias.jpg?dl=0",
 		        	  img2: "https://dl.dropboxusercontent.com/s/z7fp6oxv6idz6pc/alubiass.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/dsal0buumfbfapc/alubiasss.jpg?dl=0",
-		        	   sol:"alubias",
+		        	   sol:"indabak",
 		           },
 		           {
+		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
 		        	  img1: "https://dl.dropboxusercontent.com/s/7gx3c8h04s582k7/falda.jpg?dl=0",
 		        	  img2: "https://dl.dropboxusercontent.com/s/l04pn78nyx14qoq/faldaa.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
-		        	   sol:"falda",
+		        	   sol:"gona",
 		           },
 		           {
+		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
 		        	  img1: "https://dl.dropboxusercontent.com/s/aefv227moje5u73/pelota.jpg?dl=0",
 		        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
 		        	   sol:"pelota",
-		           },///falta otro ejercicio pero solo hay dos imagenes
-		           
+		           },
+		           {
+		        	   enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
+		        	   img1: "https://dl.dropboxusercontent.com/s/8kmipjyibf14h4r/verde.jpg",
+		        	   img2: "https://dl.dropboxusercontent.com/s/ewrugz1zudxk3iw/verdee.gif",
+		        	   img3: "https://dl.dropboxusercontent.com/s/c5wvvaphyaf330i/verdeee.jpg",
+		        	   sol: "berdea",
+		           }
 			           
 		           
 		           ]
@@ -510,6 +519,7 @@ create: function(i) {
 	var contentDiv='<div data-role="content" id="juego-3-'+i+'" style="text-align:center;">';
 	contentDiv += queryJuego3();	
 	contentDiv +='<div id="statementDiv-Juego3-'+i+'" style="text-align:left;">'+
+	'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].enunciado+'"><br><br>'+
 	'<p>Antzekotasunak '+(i+1)+'</p>'
 	'</div>';
 	contentDiv += '</div>'+
@@ -562,7 +572,7 @@ var juego4_page = {
 			
 			var contentDiv=
 				'<div data-role="content" id="page-juego-4-'+i+'" style="text-align:center;">';
-				contentDiv += queryJuego2();	
+				contentDiv += queryJuego4();	
 			contentDiv +='<div id="statementDiv-Juego4-'+i+'" style="text-align:left;">'+
 					'<p>Galdera '+(i+1)+'</p>'+juego4.preguntas[i].enunciado+// Sacamos el enunciado de la pregunta
 					'</div>'+

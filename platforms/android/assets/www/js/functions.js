@@ -102,9 +102,9 @@ function queryJuegos() {
 	contentDiv+='<option id="selectjuego2" value="juego-2" hidden>Juego 2</option>';
 	contentDiv+='<option id="selectjuego3" value="juego-3" hidden>Juego 3</option>';
 	contentDiv+='<option id="selectjuego4" value="juego-4" hidden>Juego 4</option>';
-	contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
-	contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
-	contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
+	//contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
+	//contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
+	//contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
 	contentDiv+='</select>';
 	contentDiv+='<img id="kultur_map" class="fitpadding fit center"src="img/kulturapp_cerrado.jpg"/>';
 	contentDiv+='</div>';
