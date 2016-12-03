@@ -16,17 +16,23 @@
 
 var appConstants = {
 	serverURL: "http://u017633.ehu.eus:28080/KULTURAPP_SERVER/",
-	requestSitiosURL: function() {
-		return this.serverURL+"rest/Kulturapp/requestSitios";
+	loginURL: function() {
+		return this.serverURL+"rest/Kulturapp/login";
 	},
-	requestCriticasURL: function() {
-		return this.serverURL+"rest/Kulturapp/requestCriticas";
+	addUserURL: function() {
+		return this.serverURL+"rest/Kulturapp/addUser";
 	},
-	addCriticaURL: function() {
-		return this.serverURL+"rest/Kulturapp/addCriticas";
+	updateUserURL: function() {
+		return this.serverURL+"rest/Kulturapp/updateUser";
 	},
-	addPuntuacionURL: function() {
-		return this.serverURL+"rest/Kulturapp/addPuntuacion";
+	requestPuntuacionURL: function() {
+		return this.serverURL+"rest/Kulturapp/requestPuntuacion";
+	},
+	updatePuntuacionURL: function() {
+		return this.serverURL+"rest/Kulturapp/updatePuntuacion";
+	},
+	initPuntuacionURL: function() {
+		return this.serverURL+"rest/Kulturapp/initPuntuacion";
 	}
 };
 var usuario={

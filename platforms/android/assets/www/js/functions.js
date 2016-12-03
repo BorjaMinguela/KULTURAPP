@@ -26,7 +26,37 @@ function genLogIn() {
 }
 
 function logInFunction() {
+	var username=$("#username").val();
+	var proceder=true;
+	/*
+	if((navigator.connection.type!=Connection.WIFI)&&(navigator.connection.type!=Connection.CELL_3G)&&(navigator.connection.type!=Connection.CELL_4G)){
+		proceder=confirm("Para el debido funcionamiento de la aplicación, debe estar conectado a la red");
+	}
+	if(proceder==true){
+		$.ajaxSetup({contentType: "application/json"});
 	
+		$.post(appConstants.loginURL(),JSON.stringify(username),//Enviar al Servidor el objeto critica,que debe ser convertido a string
+			function(data,status) {//Función callback
+				if(status=="success"){//Si la HTTP-RESPONSE es OK
+					usuario.login=data.login;
+					usuario.progreso=data.progreso;
+					
+					if(usuario.login=="Invalido"){
+						
+					}
+				}
+				else {
+					alert("NO RESPONSE FROM SERVER");
+				}
+			},
+			"text"//Content-type esperado en HTTP-RESPONSE: text lo que se espera recibir
+		);
+	}
+	else{
+		alert("No se pudo conectar con la base de datos");
+	}
+	*/
+	alert("usuario "+usuario.login+","+usuario.progreso);
 	alert("You've been logged in");
 	
 	page_creation();
@@ -71,7 +101,7 @@ function page_creation() {
 		juego2pageDiv=juego2_page.create(i);
 		$("body").append(juego2pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	}
-		$("#next-juego-2-"+(juego2.total-1)).attr("href","#juego-2-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 2 vuelva al primer ejercicio
+		$("#next-juego-2-"+(juego2.total-1)).attr("onclick","terminarJuego2()");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 2 vuelva al primer ejercicio
 
 	var juego3pageDiv;
 	for(var i=0;i<juego3.total;i++)
@@ -79,14 +109,14 @@ function page_creation() {
 		juego3pageDiv=juego3_page.create(i);
 		$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	}
-	$("#next-juego-3-"+(juego3.total-1)).attr("href","#juego-3-0");
+	$("#next-juego-3-"+(juego3.total-1)).attr("onclick","#terminarJuego3()");
 	var juego4pageDiv;
 	for(var i=0;i<juego4.total;i++)
 	{
 		juego4pageDiv=juego4_page.create(i);
 		$("body").append(juego4pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	}
-	$("#next-juego-4-"+(juego4.total-1)).attr("href","#juego-4-0");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 4 vuelva al primer ejercicio
+	$("#next-juego-4-"+(juego4.total-1)).attr("onclick","#terminarJuego4()");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 4 vuelva al primer ejercicio
 	
 	
 	//window.location.href = "#page-home";
@@ -217,6 +247,8 @@ function terminarJuego1(){
 		puntuacionJuego1.correctas=resultsJuego.corrects;
 		puntuacionJuego1.respondidas=resultsJuego.answered;
 		usuario.progreso=1;
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
 		$(".res-1").text('0');
 		$(".res-2").text('0');
 		$("#selectjuego2").show();
@@ -263,8 +295,35 @@ function checkJuego2(i) {
 		}
 	);
 
-	$("#button-Juego2-"+i+"-1").attr("onclick","");//desactiva el boton de check
+	$("#button-Juego2-"+i+"-1").hide();//desactiva el boton de check
 //	alert("check 7");
+}
+
+function terminarJuego2(){
+	//alert("terminarjuego1");
+	if (resultsJuego.corrects==6){
+		//alert("correctas");
+		puntuacionJuego2.correctas=resultsJuego.corrects;
+		puntuacionJuego2.respondidas=resultsJuego.answered;
+		usuario.progreso=2;
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		$("#selectjuego3").show();
+		returnHome();
+	}
+	else{
+		//alert("incorrectas");
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		for (i=0;i<juego2.total;i++){
+			$("#button-Juego2-"+i+"-1").show();
+		}
+		window.location.href = "#juego-2-0";
+	}
 }
 function checkJuego3(i) {
 //	alert("check 1");
@@ -286,8 +345,35 @@ function checkJuego3(i) {
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
 	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
 
-	$("#button-Juego3-"+i+"-1").attr("onclick","");//desactiva el boton de check
+	$("#button-Juego3-"+i+"-1").hide();//desactiva el boton de check
 //	alert("check 7");
+}
+
+function terminarJuego3(){
+	//alert("terminarjuego1");
+	if (resultsJuego.corrects==4){
+		//alert("correctas");
+		puntuacionJuego3.correctas=resultsJuego.corrects;
+		puntuacionJuego3.respondidas=resultsJuego.answered;
+		usuario.progreso=3;
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		$("#selectjuego4").show();
+		returnHome();
+	}
+	else{
+		//alert("incorrectas");
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		for (i=0;i<juego3.total;i++){
+			$("#button-Juego3-"+i+"-1").show();
+		}
+		window.location.href = "#juego-3-0";
+	}
 }
 
 function checkJuego4(i) {
@@ -318,7 +404,34 @@ function checkJuego4(i) {
 		}
 	);
 
-	$("#button-Juego4-"+i+"-1").attr("onclick","");//desactiva el boton de check
+	$("#button-Juego4-"+i+"-1").hide();//desactiva el boton de check
 //	alert("check 7");
+}
+
+function terminarJuego4(){
+	//alert("terminarjuego1");
+	if (resultsJuego.corrects==10){
+		//alert("correctas");
+		puntuacionJuego4.correctas=resultsJuego.corrects;
+		puntuacionJuego4.respondidas=resultsJuego.answered;
+		usuario.progreso=4;
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		$("#selectjuego3").show();
+		returnHome();
+	}
+	else{
+		//alert("incorrectas");
+		resultsJuego.corrects=0;
+		resultsJuego.answered=0;
+		$(".res-1").text('0');
+		$(".res-2").text('0');
+		for (i=0;i<juego4.total;i++){
+			$("#button-Juego4-"+i+"-1").show();
+		}
+		window.location.href = "#juego-4-0";
+	}
 }
 
