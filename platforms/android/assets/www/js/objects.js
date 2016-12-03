@@ -15,24 +15,25 @@
  */
 
 var appConstants = {
-	serverURL: "http://u017633.ehu.eus:28080/KULTURAPP_SERVER/",
+	//serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
+	serverURL: "http://192.168.1.48:8080/KulturaApp_Serv/",
 	loginURL: function() {
-		return this.serverURL+"rest/Kulturapp/login";
+		return this.serverURL+"rest/KulturaApp/login";
 	},
 	addUserURL: function() {
-		return this.serverURL+"rest/Kulturapp/addUser";
+		return this.serverURL+"rest/KulturaApp/addUser";
 	},
 	updateUserURL: function() {
-		return this.serverURL+"rest/Kulturapp/updateUser";
+		return this.serverURL+"rest/KulturaApp/updateUser";
 	},
 	requestPuntuacionURL: function() {
-		return this.serverURL+"rest/Kulturapp/requestPuntuacion";
+		return this.serverURL+"rest/KulturaApp/requestPuntuacion";
 	},
 	updatePuntuacionURL: function() {
-		return this.serverURL+"rest/Kulturapp/updatePuntuacion";
+		return this.serverURL+"rest/KulturaApp/updatePuntuacion";
 	},
 	initPuntuacionURL: function() {
-		return this.serverURL+"rest/Kulturapp/initPuntuacion";
+		return this.serverURL+"rest/KulturaApp/initPuntuacion";
 	}
 };
 var usuario={
@@ -77,7 +78,7 @@ var initial_pages = {
 };
 
 var opcionesIniciales = {
-		seleccion: ["Juego 1","Juego 2","Juego 3","Juego 4"]
+		seleccion: ["Jolasketa 1","Jolasketa 2","Jolasketa 3","Jolasketa 4"]
 	};
 
 var juego1={//Que imagen no es de esa nación
@@ -373,13 +374,13 @@ var home_page = {
 			
 			var contentDiv=
 				'<div id="ancla-home" class="ui-field-contain">'+
-				'<label for="select-1">Selecciona juego:</label>'+
+				'<label for="select-1">Aukeratu jolasketa:</label>'+
 				'<select name="select-1" id="select-1-1" data-theme="a">';
 				contentDiv += queryJuegos();
 				
 			var footerDiv=
 				'<div data-role="footer" data-position="fixed" style="text-align:center">'+
-				'<a href="" id="button-home-juegos" onclick=selectJuego("select-1-1") class="ui-btn ui-icon-forward ui-btn-icon-left ui-corner-all">SELECT</a>'+
+				'<a href="" id="button-home-juegos" onclick=selectJuego("select-1-1") class="ui-btn ui-icon-forward ui-btn-icon-left ui-corner-all">AUKERATU</a>'+
 				'</div>';
 			
 			pageDiv.append(headerDiv,contentDiv,footerDiv);

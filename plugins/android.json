@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "eus.ehu.intel.tta.kulturapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.kulturapp"
         }
     },
     "dependent_plugins": {}

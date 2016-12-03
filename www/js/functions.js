@@ -28,22 +28,55 @@ function genLogIn() {
 function logInFunction() {
 	var username=$("#username").val();
 	var proceder=true;
-	/*
+	
 	if((navigator.connection.type!=Connection.WIFI)&&(navigator.connection.type!=Connection.CELL_3G)&&(navigator.connection.type!=Connection.CELL_4G)){
 		proceder=confirm("Para el debido funcionamiento de la aplicación, debe estar conectado a la red");
 	}
 	if(proceder==true){
-		$.ajaxSetup({contentType: "application/json"});
+		$.ajaxSetup({
+	        async: false,
+	        cache:false,
+	        contentType:"application/json"
+	    });
+		
+		$.getJSON(appConstants.loginURL()+"?username="+username,
+			function(data,status) {
+				if(status=="success"){
+					if(data.login!="Invalido"){
+	            	usuario.login=data.login;
+	            	usuario.progreso=data.progreso;
+	            	alert(usuario.login+','+usuario.progreso);
+	            	}
+					else{
+						addUser();
+					}
+				}
+				else {
+					alert("NO RESPONSE FROM SERVER");
+				}
+			}
+		);
+	}
+	else{
+		alert("No se pudo conectar con el servidor");
+	}
 	
-		$.post(appConstants.loginURL(),JSON.stringify(username),//Enviar al Servidor el objeto critica,que debe ser convertido a string
+	//alert("usuario "+usuario.login+","+usuario.progreso);
+	alert("Sartu zara");
+	
+	page_creation();
+	
+}
+
+function addUser(){
+	
+	var username=$("#username").val();
+	$.ajaxSetup({contentType: "application/json"});
+	
+	$.post(appConstants.addUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
 			function(data,status) {//Función callback
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
-					usuario.login=data.login;
-					usuario.progreso=data.progreso;
-					
-					if(usuario.login=="Invalido"){
-						
-					}
+					alert(data);
 				}
 				else {
 					alert("NO RESPONSE FROM SERVER");
@@ -51,16 +84,6 @@ function logInFunction() {
 			},
 			"text"//Content-type esperado en HTTP-RESPONSE: text lo que se espera recibir
 		);
-	}
-	else{
-		alert("No se pudo conectar con la base de datos");
-	}
-	*/
-	alert("usuario "+usuario.login+","+usuario.progreso);
-	alert("You've been logged in");
-	
-	page_creation();
-	
 }
 
 function welcome() {
@@ -109,14 +132,14 @@ function page_creation() {
 		juego3pageDiv=juego3_page.create(i);
 		$("body").append(juego3pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	}
-	$("#next-juego-3-"+(juego3.total-1)).attr("onclick","#terminarJuego3()");
+	$("#next-juego-3-"+(juego3.total-1)).attr("onclick","terminarJuego3()");
 	var juego4pageDiv;
 	for(var i=0;i<juego4.total;i++)
 	{
 		juego4pageDiv=juego4_page.create(i);
 		$("body").append(juego4pageDiv); //añadimos el pagediv, con toda la pagina, al DOM
 	}
-	$("#next-juego-4-"+(juego4.total-1)).attr("onclick","#terminarJuego4()");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 4 vuelva al primer ejercicio
+	$("#next-juego-4-"+(juego4.total-1)).attr("onclick","terminarJuego4()");//Hace que el siguiente de la ultima pagina del ultimo ejercicio del juego 4 vuelva al primer ejercicio
 	
 	
 	//window.location.href = "#page-home";
@@ -128,10 +151,10 @@ function page_creation() {
 function queryJuegos() {
 	
 	var contentDiv='<div data-role="content" id="scrollable">';
-	contentDiv+='<option id="selectjuego1" value="juego-1">Juego 1</option>';
-	contentDiv+='<option id="selectjuego2" value="juego-2" hidden>Juego 2</option>';
-	contentDiv+='<option id="selectjuego3" value="juego-3" hidden>Juego 3</option>';
-	contentDiv+='<option id="selectjuego4" value="juego-4" hidden>Juego 4</option>';
+	contentDiv+='<option id="selectjuego1" value="juego-1">Jolasketa 1</option>';
+	contentDiv+='<option id="selectjuego2" value="juego-2" hidden>Jolasketa 2</option>';
+	contentDiv+='<option id="selectjuego3" value="juego-3" hidden>Jolasketa 3</option>';
+	contentDiv+='<option id="selectjuego4" value="juego-4" hidden>Jolasketa 4</option>';
 	//contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
 	//contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
 	//contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
@@ -165,7 +188,7 @@ function returnHome(){//funcion para volver al menu principal
 
 function selectJuego(datos) {
 	
-	alert("Juego seleccionado");
+	alert("Jolasketa aukeratura");
 	
 	var juego_selector = document.getElementById(datos).value;
 
@@ -191,7 +214,7 @@ function selectJuego(datos) {
 
 function queryJuego1() {
 	
-	var contentDiv='<h2>Juego 1</h2>';
+	var contentDiv='<h2>Jolasketa 1</h2>';
 	
 	return contentDiv;
 	
@@ -199,7 +222,7 @@ function queryJuego1() {
 
 function queryJuego2() {
 	
-	var contentDiv='<h2>Juego 2</h2>';
+	var contentDiv='<h2>Jolasketa 2</h2>';
 	
 	return contentDiv;
 	
@@ -207,7 +230,7 @@ function queryJuego2() {
 
 function queryJuego3() {
 	
-	var contentDiv='<h2>Juego 3</h2>';
+	var contentDiv='<h2>Jolasketa 3</h2>';
 	
 	return contentDiv;
 	
@@ -215,7 +238,7 @@ function queryJuego3() {
 
 function queryJuego4() {
 	
-	var contentDiv='<h2>Juego 4</h2>';
+	var contentDiv='<h2>Jolasketa 4</h2>';
 	
 	return contentDiv;
 	
