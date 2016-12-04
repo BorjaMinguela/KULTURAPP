@@ -1,18 +1,19 @@
 /*
  * 
- * Copyright (C) 2016 Josu Barrientos Bahamonde
+ * Copyright (C) 2016 Josu Barrientos Bahamonde, Borja Minguela Foces, Mikel De Prado, Cristian Llaguno
  * 
  * 
- * BILBAPP is free software: you can redistribute it and/or modify it under
+ * KULTURAPP is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
  * 
- * BILBAPP is distributed in the hope that it will be useful, but WITHOUT
+ * KULTURAPP is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details
  * <http://www.gnu.org/licenses/>.
  */
+
 
 var appConstants = {
 	//serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
@@ -194,6 +195,8 @@ var juego3={//Que tienen en común las imagenes
 		        	  img2: "https://dl.dropboxusercontent.com/s/z7fp6oxv6idz6pc/alubiass.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/dsal0buumfbfapc/alubiasss.jpg?dl=0",
 		        	   sol:"indabak",
+		        	   letras:"_ _ _ _ _ _ _",
+		        	   pista:"i_ _d_ _ak",
 		           },
 		           {
 		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -201,6 +204,8 @@ var juego3={//Que tienen en común las imagenes
 		        	  img2: "https://dl.dropboxusercontent.com/s/l04pn78nyx14qoq/faldaa.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
 		        	   sol:"gona",
+		        	   letras:"_ _ _ _",
+		        	   pista:"_o_n_",
 		           },
 		           {
 		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -208,6 +213,8 @@ var juego3={//Que tienen en común las imagenes
 		        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
 		        	   sol:"pilota",
+		        	   letras:"_ _ _ _ _ _",
+		        	   pista:"_il_ _ _a",
 		           },
 		           {
 		        	   enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -215,6 +222,8 @@ var juego3={//Que tienen en común las imagenes
 		        	   img2: "https://dl.dropboxusercontent.com/s/ewrugz1zudxk3iw/verdee.gif",
 		        	   img3: "https://dl.dropboxusercontent.com/s/c5wvvaphyaf330i/verdeee.jpg",
 		        	   sol: "berdea",
+		        	   letras:"_ _ _ _ _ _",
+		        	   pista:"be_d_ _",
 		           }
 			           
 		           
@@ -534,6 +543,9 @@ create: function(i) {
 			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img1+'"><br>'+
 			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img2+'"><br>'+
 			'<img style="width:300px;height:200px;" src="'+juego3.preguntas[i].img3+'"><br>'+
+			'<br><br>'+
+			'<h2 id=letras'+i+'>'+juego3.preguntas[i].letras+'</h2>'+
+			'<a onclick="showInfo('+i+')" id="info'+i+'" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>'+
 			'<label for="text-juego-3-'+i+'">Erantzuna:</label>'+
 			'<input name="erantzuna" id="eran-juego-3-'+i+'" data-clear-btn="true" value="" type="text" placeholder="Erantzuna" />'+
 			'<div style="text-align:center;">'+

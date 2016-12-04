@@ -375,6 +375,10 @@ function checkJuego3(i) {
 //	alert("check 7");
 }
 
+function showInfo(i){
+	$("#letras"+i).text(juego3.preguntas[i].pista);
+}
+
 function terminarJuego3(){
 	//alert("terminarjuego1");
 	if (resultsJuego.corrects==4){
