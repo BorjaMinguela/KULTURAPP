@@ -155,9 +155,9 @@ function queryJuegos() {
 	contentDiv+='<option id="selectjuego2" value="juego-2" hidden>Jolasketa 2</option>';
 	contentDiv+='<option id="selectjuego3" value="juego-3" hidden>Jolasketa 3</option>';
 	contentDiv+='<option id="selectjuego4" value="juego-4" hidden>Jolasketa 4</option>';
-	//contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
-	//contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
-	//contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
+//	contentDiv+='<option value="juego-2">DEBUG Juego 2</option>';//BM: Para que estas opciones esten disponibles aunque no hayamos completado los anteriores, lo quitamos cuando funcione todo
+//	contentDiv+='<option value="juego-3">DEBUG Juego 3</option>';
+//	contentDiv+='<option value="juego-4">DEBUG Juego 4</option>';
 	contentDiv+='</select>';
 	contentDiv+='<img id="kultur_map" class="fitpadding fit center"src="img/kulturapp_cerrado.jpg"/>';
 	contentDiv+='</div>';
@@ -180,6 +180,9 @@ function returnHome(){//funcion para volver al menu principal
         break;
     case 3:
         tablero='img/kulturapp_juego-4.jpg';
+        break;
+    case 4:
+        tablero='https://dl.dropboxusercontent.com/s/96dcgb5owo1881p/video%2010.gif?dl=0';
         break;
 }
 	$(elemento).attr('src',tablero);
@@ -266,10 +269,10 @@ function checkJuego1(i){
 function terminarJuego1(){
 	//alert("terminarjuego1");
 	if (resultsJuego.corrects==6){
-		//alert("correctas");
+		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego1.correctas=resultsJuego.corrects;
 		puntuacionJuego1.respondidas=resultsJuego.answered;
-		usuario.progreso=1;
+		if (usuario.progreso<1) usuario.progreso=1;
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -278,7 +281,7 @@ function terminarJuego1(){
 		returnHome();
 	}
 	else{
-		//alert("incorrectas");
+		alert("Saia zaitez berriro");
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -308,15 +311,15 @@ function checkJuego2(i) {
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
 	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
 	
-	$("label[id|='label-radio-choice-Juego-2-"+i+"']").each(
-		function(index) {
-			if(index!=juego2.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
-				$(this).css("color","red");
-			}
-			else
-				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
-		}
-	);
+//	$("label[id|='label-radio-choice-Juego-2-"+i+"']").each(
+//		function(index) {
+//			if(index!=juego2.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
+//				$(this).css("color","red");
+//			}
+//			else
+//				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
+//		}
+//	);
 
 	$("#button-Juego2-"+i+"-1").hide();//desactiva el boton de check
 //	alert("check 7");
@@ -325,10 +328,10 @@ function checkJuego2(i) {
 function terminarJuego2(){
 	//alert("terminarjuego1");
 	if (resultsJuego.corrects==6){
-		//alert("correctas");
+		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego2.correctas=resultsJuego.corrects;
 		puntuacionJuego2.respondidas=resultsJuego.answered;
-		usuario.progreso=2;
+		if (usuario.progreso<2) usuario.progreso=2;
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -337,7 +340,7 @@ function terminarJuego2(){
 		returnHome();
 	}
 	else{
-		//alert("incorrectas");
+		alert("Saia zaitez berriro");
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -358,11 +361,11 @@ function checkJuego3(i) {
 	if(answer==juego3.preguntas[i].sol) {
 		alert("Zuzena");
 		resultsJuego.corrects++;
-		$("#eran-juego-3-"+i).css("color","green");
+		//$("#eran-juego-3-"+i).css("color","green");
 	}
 	else {
 		alert("Okerra");
-		$("#eran-juego-3-"+i).css("color","red");
+		//$("#eran-juego-3-"+i).css("color","red");
 	}
 	
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
@@ -375,10 +378,10 @@ function checkJuego3(i) {
 function terminarJuego3(){
 	//alert("terminarjuego1");
 	if (resultsJuego.corrects==4){
-		//alert("correctas");
+		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego3.correctas=resultsJuego.corrects;
 		puntuacionJuego3.respondidas=resultsJuego.answered;
-		usuario.progreso=3;
+		if (usuario.progreso<3) usuario.progreso=3;
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -387,7 +390,7 @@ function terminarJuego3(){
 		returnHome();
 	}
 	else{
-		//alert("incorrectas");
+		alert("Saia zaitez berriro");
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -417,15 +420,15 @@ function checkJuego4(i) {
 	$(".res-1").text(""+resultsJuego.corrects+"/"+resultsJuego.answered);
 	$(".res-2").text(""+(resultsJuego.corrects*100/resultsJuego.answered).toFixed(2)+"%");
 	
-	$("label[id|='label-radio-choice-Juego-4-"+i+"']").each(
-		function(index) {
-			if(index!=juego4.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
-				$(this).css("color","red");
-			}
-			else
-				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
-		}
-	);
+//	$("label[id|='label-radio-choice-Juego-4-"+i+"']").each(
+//		function(index) {
+//			if(index!=juego4.preguntas[i].sol) { //This can be done because of appropriate "value" attributes and label-radio-choice id attributes
+//				$(this).css("color","red");
+//			}
+//			else
+//				$(this).css({"color":"white","background-color":"green","font-size":"24px"});
+//		}
+//	);
 
 	$("#button-Juego4-"+i+"-1").hide();//desactiva el boton de check
 //	alert("check 7");
@@ -434,7 +437,7 @@ function checkJuego4(i) {
 function terminarJuego4(){
 	//alert("terminarjuego1");
 	if (resultsJuego.corrects==10){
-		//alert("correctas");
+		alert("Eskerrik asko nire etxea berreskuratzeagatik! Hurrengora arte!");
 		puntuacionJuego4.correctas=resultsJuego.corrects;
 		puntuacionJuego4.respondidas=resultsJuego.answered;
 		usuario.progreso=4;
@@ -446,13 +449,13 @@ function terminarJuego4(){
 		returnHome();
 	}
 	else{
-		//alert("incorrectas");
+		alert("Saia zaitez berriro");
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
 		$(".res-2").text('0');
 		for (i=0;i<juego4.total;i++){
-			$("#button-Juego1-"+i+"-1").show();
+			$("#button-Juego4-"+i+"-1").show();
 		}
 		window.location.href = "#juego-4-0";
 	}

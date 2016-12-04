@@ -207,7 +207,7 @@ var juego3={//Que tienen en común las imagenes
 		        	  img1: "https://dl.dropboxusercontent.com/s/aefv227moje5u73/pelota.jpg?dl=0",
 		        	  img2: "https://dl.dropboxusercontent.com/s/cjg5ig376hvou7y/pelotaa.jpg?dl=0",
 		        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
-		        	   sol:"pelota",
+		        	   sol:"pilota",
 		           },
 		           {
 		        	   enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -429,7 +429,7 @@ var juego1_page = {
 			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-1-'+(i+1)+'" id="next-juego-1-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 				'</div>'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-a">EMAILTZA: </div>'+
 					'<div class="ui-block-b res-1" id="juego1-res-'+i+'-1"></div>'+
 					'<div class="ui-block-c res-2" id="juego1-res-'+i+'-2"></div>'+
 				'</div>'+	
@@ -494,7 +494,7 @@ var juego2_page = {
 			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-2-'+(i+1)+'" id="next-juego-2-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 				'</div>'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-a">EMAILTZA: </div>'+
 					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
 					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
 				'</div>'+	
@@ -548,7 +548,7 @@ create: function(i) {
 		footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-3-'+(i+1)+'" id="next-juego-3-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 			'</div>'+
 			'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-				'<div class="ui-block-a">RESULTS: </div>'+
+				'<div class="ui-block-a">EMAILTZA: </div>'+
 				'<div class="ui-block-b res-1" id="juego3-res-'+i+'-1"></div>'+
 				'<div class="ui-block-c res-2" id="juego3-res-'+i+'-2"></div>'+
 			'</div>'+	
@@ -610,7 +610,7 @@ var juego4_page = {
 			footerDiv+=	'<div class="ui-block-c" style="text-align:right;width:20%;"><a href="#juego-4-'+(i+1)+'" id="next-juego-4-'+i+'" class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-mini ui-btn-inline ui-corner-all" data-transition="turn">Hurrengo</a></div>'+
 				'</div>'+
 				'<div class="ui-grid-b" style="width:80%; text-align:center; font-weight:normal;">'+
-					'<div class="ui-block-a">RESULTS: </div>'+
+					'<div class="ui-block-a">EMAILTZA: </div>'+
 					'<div class="ui-block-b res-1" id="res-'+i+'-1"></div>'+
 					'<div class="ui-block-c res-2" id="res-'+i+'-2"></div>'+
 				'</div>'+	
