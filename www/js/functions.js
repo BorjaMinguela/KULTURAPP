@@ -45,7 +45,7 @@ function logInFunction() {
 					if(data.login!="Invalido"){
 	            	usuario.login=data.login;
 	            	usuario.progreso=data.progreso;
-	            	alert(usuario.login+','+usuario.progreso);
+	            	//alert(usuario.login+','+usuario.progreso);
 	            	}
 					else{
 						addUser();
@@ -71,6 +71,8 @@ function logInFunction() {
 function addUser(){
 	
 	var username=$("#username").val();
+	usuario.login=username;
+	
 	$.ajaxSetup({contentType: "application/json"});
 	
 	$.post(appConstants.addUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
@@ -84,6 +86,20 @@ function addUser(){
 			},
 			"text"//Content-type esperado en HTTP-RESPONSE: text lo que se espera recibir
 		);
+	
+	$.ajaxSetup({
+        async: false,
+        cache:false,
+        contentType:"application/json"
+    });
+	
+	$.getJSON(appConstants.initPuntuacionURL()+"?username="+username,
+		function(data,status) {
+			if(status!="success"){
+				alert("NO RESPONSE FROM SERVER");
+			}
+		}
+	);
 }
 
 function welcome() {
