@@ -26,9 +26,9 @@ function genLogIn() {
 }
 
 function logInFunction() {
-	var username=$("#username").val();
+	var userName=$("#username").val();
 	var proceder=true;
-	
+	alert("Entro al login");
 	if((navigator.connection.type!=Connection.WIFI)&&(navigator.connection.type!=Connection.CELL_3G)&&(navigator.connection.type!=Connection.CELL_4G)){
 		proceder=confirm("Para el debido funcionamiento de la aplicación, debe estar conectado a la red");
 	}
@@ -38,8 +38,8 @@ function logInFunction() {
 	        cache:false,
 	        contentType:"application/json"
 	    });
-		
-		$.getJSON(appConstants.loginURL()+"?username="+username,
+		alert("user:"+userName);
+		$.getJSON(appConstants.loginURL(),{username:userName},
 			function(data,status) {
 				if(status=="success"){
 					if(data.login!="Invalido"){
@@ -74,11 +74,13 @@ function addUser(){
 	usuario.login=username;
 	
 	$.ajaxSetup({contentType: "application/json"});
+	usuario.login=username;
 	
 	$.post(appConstants.addUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
 			function(data,status) {//Función callback
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
 					alert(data);
+					usuario=data;
 				}
 				else {
 					alert("NO RESPONSE FROM SERVER");
