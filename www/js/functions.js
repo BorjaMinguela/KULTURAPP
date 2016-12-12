@@ -43,8 +43,8 @@ function logInFunction() {
 			function(data,status) {
 				if(status=="success"){
 					if(data.login!="Invalido"){
-	            	usuario.login=data.login;
-	            	usuario.progreso=data.progreso;
+						usuario.login=data.login;
+						usuario.progreso=data.progreso;
 	            	//alert(usuario.login+','+usuario.progreso);
 	            	}
 					else{
@@ -81,6 +81,7 @@ function addUser(){
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
 					alert(data);
 					usuario=data;
+					usuario.progreso=0;
 				}
 				else {
 					alert("NO RESPONSE FROM SERVER");
@@ -89,19 +90,23 @@ function addUser(){
 			"text"//Content-type esperado en HTTP-RESPONSE: text lo que se espera recibir
 		);
 	
-	$.ajaxSetup({
-        async: false,
-        cache:false,
-        contentType:"application/json"
-    });
+}
+function updateUser()
+{
+	$.ajaxSetup({contentType: "application/json"});
+	$.post(appConstants.updateUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
+			function(data,status) {//Función callback
+				if(status=="success"){//Si la HTTP-RESPONSE es OK
+					alert(data);
+				}
+				else {
+					alert("NO RESPONSE FROM SERVER");
+				}
+			},
+			"text"//Content-type esperado en HTTP-RESPONSE: text lo que se espera recibir
+		);
 	
-	$.getJSON(appConstants.initPuntuacionURL()+"?username="+username,
-		function(data,status) {
-			if(status!="success"){
-				alert("NO RESPONSE FROM SERVER");
-			}
-		}
-	);
+
 }
 
 function welcome() {
@@ -113,6 +118,10 @@ function welcome() {
     setTimeout(function() {
     	window.location.href = "#page-home";
     }, delay);
+    if(usuario.progreso>0)
+	{
+    	returnHome();
+	}
 	
 }
 
@@ -186,6 +195,7 @@ function queryJuegos() {
 function returnHome(){//funcion para volver al menu principal
 	var elemento = "#kultur_map";
 	var tablero="";
+	alert(usuario.progreso+"Gen menu");
 	switch(usuario.progreso) {
     case 0:
         tablero='img/kulturapp_cerrado.jpg';
@@ -290,7 +300,11 @@ function terminarJuego1(){
 		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego1.correctas=resultsJuego.corrects;
 		puntuacionJuego1.respondidas=resultsJuego.answered;
-		if (usuario.progreso<1) usuario.progreso=1;
+		if (usuario.progreso<1)
+		{
+			usuario.progreso=1;
+			updateUser();
+		}
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -349,7 +363,10 @@ function terminarJuego2(){
 		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego2.correctas=resultsJuego.corrects;
 		puntuacionJuego2.respondidas=resultsJuego.answered;
-		if (usuario.progreso<2) usuario.progreso=2;
+		if (usuario.progreso<2){
+			usuario.progreso=2;
+			updateUser();
+		}
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -403,7 +420,10 @@ function terminarJuego3(){
 		alert("Primeran! Goazen hurrengo jolasera!");
 		puntuacionJuego3.correctas=resultsJuego.corrects;
 		puntuacionJuego3.respondidas=resultsJuego.answered;
-		if (usuario.progreso<3) usuario.progreso=3;
+		if (usuario.progreso<3){
+			usuario.progreso=3;
+			updateUser();
+		}
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');
@@ -462,7 +482,10 @@ function terminarJuego4(){
 		alert("Eskerrik asko nire etxea berreskuratzeagatik! Hurrengora arte!");
 		puntuacionJuego4.correctas=resultsJuego.corrects;
 		puntuacionJuego4.respondidas=resultsJuego.answered;
-		usuario.progreso=4;
+		if(usuario.progreso<4){
+			usuario.progreso=4;
+			updateUser();
+		}
 		resultsJuego.corrects=0;
 		resultsJuego.answered=0;
 		$(".res-1").text('0');

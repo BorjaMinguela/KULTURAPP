@@ -26,15 +26,6 @@ var appConstants = {
 	},
 	updateUserURL: function() {
 		return this.serverURL+"rest/KulturaApp/updateUser";
-	},
-	requestPuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/requestPuntuacion";
-	},
-	updatePuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/updatePuntuacion";
-	},
-	initPuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/initPuntuacion";
 	}
 };
 var usuario={
