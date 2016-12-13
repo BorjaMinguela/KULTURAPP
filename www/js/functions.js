@@ -202,15 +202,24 @@ function returnHome(){//funcion para volver al menu principal
         break;
     case 1:
         tablero='img/kulturapp_juego-2.jpg';
+        $("#selectjuego2").show();
         break;
     case 2:
         tablero='img/kulturapp_juego-3.jpg';
+        $("#selectjuego2").show();
+        $("#selectjuego3").show();
         break;
     case 3:
         tablero='img/kulturapp_juego-4.jpg';
+        $("#selectjuego2").show();
+        $("#selectjuego3").show();
+        $("#selectjuego4").show();
         break;
     case 4:
         tablero='https://dl.dropboxusercontent.com/s/96dcgb5owo1881p/video%2010.gif?dl=0';
+        $("#selectjuego2").show();
+        $("#selectjuego3").show();
+        $("#selectjuego4").show();
         break;
 }
 	$(elemento).attr('src',tablero);
