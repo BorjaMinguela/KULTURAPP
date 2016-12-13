@@ -16,8 +16,8 @@
 
 
 var appConstants = {
-	//serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
-	serverURL: "http://192.168.0.13:8080/KulturaApp_Serv/",
+	serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
+	//serverURL: "http://192.168.0.13:8080/KulturaApp_Serv/",
 	loginURL: function() {
 		return this.serverURL+"rest/KulturaApp/login";
 	},

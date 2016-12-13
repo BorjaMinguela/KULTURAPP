@@ -28,7 +28,7 @@ function genLogIn() {
 function logInFunction() {
 	var userName=$("#username").val();
 	var proceder=true;
-	alert("Entro al login");
+	//alert("Entro al login");
 	if((navigator.connection.type!=Connection.WIFI)&&(navigator.connection.type!=Connection.CELL_3G)&&(navigator.connection.type!=Connection.CELL_4G)){
 		proceder=confirm("Para el debido funcionamiento de la aplicación, debe estar conectado a la red");
 	}
@@ -38,7 +38,7 @@ function logInFunction() {
 	        cache:false,
 	        contentType:"application/json"
 	    });
-		alert("user:"+userName);
+		alert("Erabiltzaile: "+userName);
 		$.getJSON(appConstants.loginURL(),{username:userName},
 			function(data,status) {
 				if(status=="success"){
@@ -79,7 +79,7 @@ function addUser(){
 	$.post(appConstants.addUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
 			function(data,status) {//Función callback
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
-					alert(data);
+					//alert(data);
 					usuario=data;
 					usuario.progreso=0;
 				}
@@ -97,7 +97,7 @@ function updateUser()
 	$.post(appConstants.updateUserURL(),JSON.stringify(usuario),//Enviar al Servidor el objeto critica,que debe ser convertido a string
 			function(data,status) {//Función callback
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
-					alert(data);
+					//alert(data);
 				}
 				else {
 					alert("NO RESPONSE FROM SERVER");
@@ -195,7 +195,7 @@ function queryJuegos() {
 function returnHome(){//funcion para volver al menu principal
 	var elemento = "#kultur_map";
 	var tablero="";
-	alert(usuario.progreso+"Gen menu");
+	//alert(usuario.progreso+"Gen menu");
 	switch(usuario.progreso) {
     case 0:
         tablero='img/kulturapp_cerrado.jpg';
