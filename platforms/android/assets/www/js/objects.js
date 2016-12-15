@@ -16,8 +16,8 @@
 
 
 var appConstants = {
-	//serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
-	serverURL: "http://192.168.1.48:8080/KulturaApp_Serv/",
+	serverURL: "http://u017633.ehu.eus:28080/KulturaApp_Serv/",
+	//serverURL: "http://192.168.0.13:8080/KulturaApp_Serv/",
 	loginURL: function() {
 		return this.serverURL+"rest/KulturaApp/login";
 	},
@@ -26,15 +26,6 @@ var appConstants = {
 	},
 	updateUserURL: function() {
 		return this.serverURL+"rest/KulturaApp/updateUser";
-	},
-	requestPuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/requestPuntuacion";
-	},
-	updatePuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/updatePuntuacion";
-	},
-	initPuntuacionURL: function() {
-		return this.serverURL+"rest/KulturaApp/initPuntuacion";
 	}
 };
 var usuario={
@@ -196,7 +187,7 @@ var juego3={//Que tienen en común las imagenes
 		        	  img3: "https://dl.dropboxusercontent.com/s/dsal0buumfbfapc/alubiasss.jpg?dl=0",
 		        	   sol:"indabak",
 		        	   letras:"_ _ _ _ _ _ _",
-		        	   pista:"i_ _d_ _ak",
+		        	   pista:"i_d_ _ak",
 		           },
 		           {
 		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -205,7 +196,7 @@ var juego3={//Que tienen en común las imagenes
 		        	  img3: "https://dl.dropboxusercontent.com/s/6j59xdwut5wblul/faldaaa.jpg?dl=0",
 		        	   sol:"gona",
 		        	   letras:"_ _ _ _",
-		        	   pista:"_o_n_",
+		        	   pista:"_on_",
 		           },
 		           {
 		        	  enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
@@ -214,7 +205,7 @@ var juego3={//Que tienen en común las imagenes
 		        	  img3: "https://dl.dropboxusercontent.com/s/eev5hlnry1hmlrk/pelotaaa.jpg?dl=0",
 		        	   sol:"pilota",
 		        	   letras:"_ _ _ _ _ _",
-		        	   pista:"_il_ _ _a",
+		        	   pista:"_il_ _a",
 		           },
 		           {
 		        	   enunciado: "https://dl.dropboxusercontent.com/s/4avra6tquib18f1/video%2010.gif?dl=0",
