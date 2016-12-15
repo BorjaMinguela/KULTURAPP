@@ -80,7 +80,7 @@ function addUser(){
 			function(data,status) {//Función callback
 				if(status=="success"){//Si la HTTP-RESPONSE es OK
 					//alert(data);
-					usuario=data;
+					usuario.login=data;
 					usuario.progreso=0;
 				}
 				else {
